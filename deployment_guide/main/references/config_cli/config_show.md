@@ -70,7 +70,7 @@ $ osmo config show SERVICE
 
 Show the `default_cpu` resource validation rule:
 
-```text
+```bash
 $ osmo config show RESOURCE_VALIDATION default_cpu
 [
   {
@@ -90,7 +90,7 @@ $ osmo config show RESOURCE_VALIDATION default_cpu
 
 Show the `user_workflow_limits` workflow configuration in a previous revision:
 
-```text
+```bash
 $ osmo config show WORKFLOW:3 user_workflow_limits
 {
   "max_num_workflows": null,
