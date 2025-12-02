@@ -1,1 +1,0 @@
-deployment_guide/install_backend/create_backend/cloud_setup.rst:59: [redirected permanently] https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-gpu to https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview#gpu-accelerated
