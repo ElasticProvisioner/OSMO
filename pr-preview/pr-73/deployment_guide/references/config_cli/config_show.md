@@ -21,79 +21,36 @@ SPDX-License-Identifier: Apache-2.0 -->
 Show a configuration or previous revision of a configuration
 
 ```default
-osmo config show [-h] config_type [names ...]
-
-Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
-
-Ex. osmo config show SERVICE
-Ex. osmo config show RESOURCE_VALIDATION default_cpu
-Ex. osmo config show WORKFLOW:3 user_workflow_limits
+usage: osmo config show [-h] config_type [names ...]
 ```
 
 ## Positional Arguments
 
-`config_type`
-: Config to show in format <CONFIG_TYPE>[:<revision>]
+* **config_type**: 
 
-`names`
-: Optional names/indices to index into the config. Can be used to show a named config.
+Config to show in format <CONFIG_TYPE>[:<revision>]
+* **names**: 
+
+Optional names/indices to index into the config. Can be used to show a named config.
+
+Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
 
 ## Examples
 
 Show a service configuration in JSON format:
 
-```bash
-$ osmo config show SERVICE
-{
-  "agent_queue_size": 1024,
-  "cli_config": {
-    "latest_version": "6.0.0",
-    "min_supported_version": null
-  },
-  "max_pod_restart_limit": "30m",
-  "service_auth": {
-    "active_key": "12345678-1234-5678-1234-567812345678",
-    "audience": "osmo",
-    "issuer": "osmo",
-    "keys": {
-      "12345678-1234-5678-1234-567812345678": {
-        "private_key": "**********",
-        "public_key": {"e":"AQAB","kid":"12345678-1234-5678-1234-567812345678","kty":"RSA","n":"**********"}
-      }
-    },
-    "user_roles": ["osmo-user"],
-    "ctrl_roles": ["osmo-user", "osmo-ctrl"]
-  },
-  "service_base_url": "|osmo_url|:443"
-}
+```default
+osmo config show SERVICE
 ```
 
 Show the `default_cpu` resource validation rule:
 
-```bash
-$ osmo config show RESOURCE_VALIDATION default_cpu
-[
-  {
-    "operator": "LE",
-    "left_operand": "{% if USER_CPU is none %}1{% else %}{{USER_CPU}}{% endif %}",
-    "right_operand": "{{K8_CPU}}",
-    "assert_message": "Value {% if USER_CPU is none %}1{% else %}{{USER_CPU}}{% endif %} too high for CPU"
-  },
-  {
-    "operator": "GT",
-    "left_operand": "{% if USER_CPU is none %}1{% else %}{{USER_CPU}}{% endif %}",
-    "right_operand": "0",
-    "assert_message": "Value {% if USER_CPU is none %}1{% else %}{{USER_CPU}}{% endif %} needs to be greater than 0 for CPU"
-  }
-]
+```default
+osmo config show RESOURCE_VALIDATION default_cpu
 ```
 
 Show the `user_workflow_limits` workflow configuration in a previous revision:
 
-```bash
-$ osmo config show WORKFLOW:3 user_workflow_limits
-{
-  "max_num_workflows": null,
-  "max_num_tasks": 6000
-}
+```default
+osmo config show WORKFLOW:3 user_workflow_limits
 ```

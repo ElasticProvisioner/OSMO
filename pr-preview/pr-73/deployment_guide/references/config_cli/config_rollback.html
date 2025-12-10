@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/collapsible_code_block.css?v=fddc5587" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f1a55564" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f411dd76" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/lifecycle-timeline.css?v=b1697d17" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/mermaid_custom.css?v=e845640e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/versioning.css?v=ed00f604" />
@@ -493,64 +493,41 @@
                   
   <section id="osmo-config-rollback">
 <span id="cli-reference-config-rollback"></span><h1>osmo config rollback<a class="headerlink" href="#osmo-config-rollback" title="Link to this heading">#</a></h1>
-<p>Roll back a configuration to a previous revision</p>
-<p>When rolling back a configuration, the revision number is incremented by 1 and a new revision is
-created. The new revision will have the same data as the desired rollback revision.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">rollback</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">revision</span> <span class="p">[</span><span class="o">--</span><span class="n">description</span> <span class="n">DESCRIPTION</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tags</span> <span class="n">TAGS</span> <span class="p">[</span><span class="n">TAGS</span> <span class="o">...</span><span class="p">]]</span>
-
-<span class="n">Available</span> <span class="n">config</span> <span class="n">types</span> <span class="p">(</span><span class="n">CONFIG_TYPE</span><span class="p">):</span> <span class="n">BACKEND</span><span class="p">,</span> <span class="n">BACKEND_TEST</span><span class="p">,</span> <span class="n">DATASET</span><span class="p">,</span> <span class="n">POD_TEMPLATE</span><span class="p">,</span> <span class="n">POOL</span><span class="p">,</span> <span class="n">RESOURCE_VALIDATION</span><span class="p">,</span> <span class="n">ROLE</span><span class="p">,</span> <span class="n">SERVICE</span><span class="p">,</span> <span class="n">WORKFLOW</span>
-
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">rollback</span> <span class="n">SERVICE</span><span class="p">:</span><span class="mi">4</span>
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">rollback</span> <span class="n">BACKEND</span><span class="p">:</span><span class="mi">7</span> <span class="o">--</span><span class="n">description</span> <span class="s2">&quot;Rolling back to stable version&quot;</span> <span class="o">--</span><span class="n">tags</span> <span class="n">rollback</span> <span class="n">stable</span>
+<p><p>Roll back a configuration to a previous revision</p>
+<p>When rolling back a configuration, the revision number is incremented by 1 and a new revision is created. The new revision will have the same data as the desired rollback revision.</p>
+</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">rollback</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">revision</span> <span class="p">[</span><span class="o">--</span><span class="n">description</span> <span class="n">DESCRIPTION</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tags</span> <span class="n">TAGS</span> <span class="p">[</span><span class="n">TAGS</span> <span class="o">...</span><span class="p">]]</span>
 </pre></div>
 </div>
-<section id="positional-arguments">
-<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Link to this heading">#</a></h2>
-<dl class="simple">
-<dt><kbd class="kbd docutils literal notranslate">revision</kbd></dt><dd><p>Revision to roll back to in format &lt;CONFIG_TYPE&gt;:&lt;revision&gt;, e.g. <code class="docutils literal notranslate"><span class="pre">SERVICE:12</span></code></p>
+<section id="src.cli.main_parser-create_cli_parser-positional-arguments">
+<h2>Positional Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-positional-arguments" title="Link to this heading">#</a></h2>
+<dl class="option-list">
+<dt id="cli_reference_config_rollback_revision"><kbd>revision</kbd><a class="headerlink" href="#cli_reference_config_rollback_revision" title="Link to this argument">#</a></dt>
+<dd><p>Revision to roll back to in format &lt;CONFIG_TYPE&gt;:&lt;revision&gt;, e.g. <a class="reference external" href="SERVICE:12" rel="noreferrer" target="_blank">SERVICE:12 <svg version="1.1" width="1.0em" height="1.0em" viewBox="0 0 16 16" aria-hidden="true" style="display: inline-block; vertical-align: middle; fill: currentColor;"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg></a></p>
 </dd>
 </dl>
 </section>
-<section id="named-arguments">
-<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Link to this heading">#</a></h2>
+<section id="src.cli.main_parser-create_cli_parser-named-arguments">
+<h2>Named Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-named-arguments" title="Link to this heading">#</a></h2>
 <dl class="option-list">
-<dt><kbd><span class="option">--description</span></kbd></dt>
+<dt id="cli_reference_config_rollback_description"><kbd>--description</kbd><a class="headerlink" href="#cli_reference_config_rollback_description" title="Link to this argument">#</a></dt>
 <dd><p>Optional description for the rollback action</p>
 </dd>
-<dt><kbd><span class="option">--tags</span></kbd></dt>
+<dt id="cli_reference_config_rollback_tags"><kbd>--tags</kbd><a class="headerlink" href="#cli_reference_config_rollback_tags" title="Link to this argument">#</a></dt>
 <dd><p>Optional tags for the rollback action</p>
 </dd>
 </dl>
 </section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<p><p>Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW</p>
+</p>
+<section id="cli_reference_config_rollback_examples">
+<h2>Examples<a class="headerlink" href="#cli_reference_config_rollback_examples" title="Link to this heading">#</a></h2>
 <p>Roll back a service configuration:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span><span class="nb">history</span><span class="w"> </span>SERVICE
-Config<span class="w"> </span>Type<span class="w">   </span>Name<span class="w">   </span>Revision<span class="w">   </span>Username<span class="w">                  </span>Created<span class="w"> </span>At<span class="w">               </span>Description<span class="w">                     </span><span class="nv">Tags</span>
-<span class="o">==============================================================================================================================</span>
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">1</span><span class="w">                                    </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">13</span>:55<span class="w"> </span>EDT<span class="w">   </span>Initial<span class="w"> </span>configuration<span class="w">           </span>-
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">2</span><span class="w">          </span>user@example.com<span class="w">          </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">14</span>:26<span class="w"> </span>EDT<span class="w">   </span>Test<span class="w"> </span>service<span class="w"> </span>config<span class="w"> </span>patch<span class="w"> </span>-<span class="w"> </span><span class="m">0</span><span class="w">   </span>user-test-0
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">3</span><span class="w">          </span>user@example.com<span class="w">          </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">14</span>:27<span class="w"> </span>EDT<span class="w">   </span>Test<span class="w"> </span>service<span class="w"> </span>config<span class="w"> </span>patch<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w">   </span>user-test-1
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">4</span><span class="w">          </span>svc-account@example.com<span class="w">   </span>May<span class="w"> </span><span class="m">08</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">10</span>:39<span class="w"> </span>EDT<span class="w">   </span>Patched<span class="w"> </span>service<span class="w"> </span>configuration<span class="w">   </span>-
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">5</span><span class="w">          </span>user@example.com<span class="w">          </span>May<span class="w"> </span><span class="m">23</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">18</span>:47<span class="w"> </span>EDT<span class="w">   </span>Update<span class="w"> </span>CLI<span class="w"> </span>version<span class="w">              </span>-
-
-$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>rollback<span class="w"> </span>SERVICE:4
-Successfully<span class="w"> </span>rolled<span class="w"> </span>back<span class="w"> </span>SERVICE<span class="w"> </span>to<span class="w"> </span>revision<span class="w"> </span><span class="m">4</span>.
-
-$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span><span class="nb">history</span><span class="w"> </span>SERVICE
-Config<span class="w"> </span>Type<span class="w">   </span>Name<span class="w">   </span>Revision<span class="w">   </span>Username<span class="w">                  </span>Created<span class="w"> </span>At<span class="w">               </span>Description<span class="w">                     </span><span class="nv">Tags</span>
-<span class="o">==============================================================================================================================</span>
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">1</span><span class="w">                                    </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">13</span>:55<span class="w"> </span>EDT<span class="w">   </span>Initial<span class="w"> </span>configuration<span class="w">           </span>-
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">2</span><span class="w">          </span>user@example.com<span class="w">          </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">14</span>:26<span class="w"> </span>EDT<span class="w">   </span>Test<span class="w"> </span>service<span class="w"> </span>config<span class="w"> </span>patch<span class="w"> </span>-<span class="w"> </span><span class="m">0</span><span class="w">   </span>user-test-0
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">3</span><span class="w">          </span>user@example.com<span class="w">          </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">14</span>:27<span class="w"> </span>EDT<span class="w">   </span>Test<span class="w"> </span>service<span class="w"> </span>config<span class="w"> </span>patch<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w">   </span>user-test-1
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">4</span><span class="w">          </span>svc-account@example.com<span class="w">   </span>May<span class="w"> </span><span class="m">08</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">10</span>:39<span class="w"> </span>EDT<span class="w">   </span>Patched<span class="w"> </span>service<span class="w"> </span>configuration<span class="w">   </span>-
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">5</span><span class="w">          </span>user@example.com<span class="w">          </span>May<span class="w"> </span><span class="m">23</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">18</span>:47<span class="w"> </span>EDT<span class="w">   </span>Update<span class="w"> </span>CLI<span class="w"> </span>version<span class="w">              </span>-
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">6</span><span class="w">          </span>user@example.com<span class="w">          </span>May<span class="w"> </span><span class="m">28</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">10</span>:27<span class="w"> </span>EDT<span class="w">   </span>Roll<span class="w"> </span>back<span class="w"> </span>SERVICE<span class="w"> </span>to<span class="w"> </span>r4<span class="w">         </span>-
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">rollback</span> <span class="n">SERVICE</span><span class="p">:</span><span class="mi">4</span>
 </pre></div>
 </div>
 <p>Roll back with description and tags:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>rollback<span class="w"> </span>BACKEND:7<span class="w"> </span>--description<span class="w"> </span><span class="s2">&quot;Rolling back to stable version&quot;</span><span class="w"> </span>--tags<span class="w"> </span>rollback<span class="w"> </span>stable
-Successfully<span class="w"> </span>rolled<span class="w"> </span>back<span class="w"> </span>BACKEND<span class="w"> </span>to<span class="w"> </span>revision<span class="w"> </span><span class="m">7</span>.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">rollback</span> <span class="n">BACKEND</span><span class="p">:</span><span class="mi">7</span> <span class="o">--</span><span class="n">description</span> <span class="s2">&quot;Rolling back to stable version&quot;</span> <span class="o">--</span><span class="n">tags</span> <span class="n">rollback</span> <span class="n">stable</span>
 </pre></div>
 </div>
 </section>
@@ -605,9 +582,9 @@ Successfully<span class="w"> </span>rolled<span class="w"> </span>back<span clas
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-arguments">Positional Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#named-arguments">Named Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#src.cli.main_parser-create_cli_parser-positional-arguments">Positional Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#src.cli.main_parser-create_cli_parser-named-arguments">Named Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cli_reference_config_rollback_examples">Examples</a></li>
 </ul>
   </nav></div>
 

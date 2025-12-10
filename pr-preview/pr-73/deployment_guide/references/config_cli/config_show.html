@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/collapsible_code_block.css?v=fddc5587" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f1a55564" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f411dd76" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/lifecycle-timeline.css?v=b1697d17" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/mermaid_custom.css?v=e845640e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/versioning.css?v=ed00f604" />
@@ -493,77 +493,36 @@
                   
   <section id="osmo-config-show">
 <span id="cli-reference-config-show"></span><h1>osmo config show<a class="headerlink" href="#osmo-config-show" title="Link to this heading">#</a></h1>
-<p>Show a configuration or previous revision of a configuration</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">show</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">config_type</span> <span class="p">[</span><span class="n">names</span> <span class="o">...</span><span class="p">]</span>
-
-<span class="n">Available</span> <span class="n">config</span> <span class="n">types</span> <span class="p">(</span><span class="n">CONFIG_TYPE</span><span class="p">):</span> <span class="n">BACKEND</span><span class="p">,</span> <span class="n">BACKEND_TEST</span><span class="p">,</span> <span class="n">DATASET</span><span class="p">,</span> <span class="n">POD_TEMPLATE</span><span class="p">,</span> <span class="n">POOL</span><span class="p">,</span> <span class="n">RESOURCE_VALIDATION</span><span class="p">,</span> <span class="n">ROLE</span><span class="p">,</span> <span class="n">SERVICE</span><span class="p">,</span> <span class="n">WORKFLOW</span>
-
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">show</span> <span class="n">SERVICE</span>
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">show</span> <span class="n">RESOURCE_VALIDATION</span> <span class="n">default_cpu</span>
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">show</span> <span class="n">WORKFLOW</span><span class="p">:</span><span class="mi">3</span> <span class="n">user_workflow_limits</span>
+<p><p>Show a configuration or previous revision of a configuration</p>
+</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">show</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">config_type</span> <span class="p">[</span><span class="n">names</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
-<section id="positional-arguments">
-<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Link to this heading">#</a></h2>
-<dl class="simple">
-<dt><kbd class="kbd docutils literal notranslate">config_type</kbd></dt><dd><p>Config to show in format &lt;CONFIG_TYPE&gt;[:&lt;revision&gt;]</p>
+<section id="src.cli.main_parser-create_cli_parser-positional-arguments">
+<h2>Positional Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-positional-arguments" title="Link to this heading">#</a></h2>
+<dl class="option-list">
+<dt id="cli_reference_config_show_config_type"><kbd>config_type</kbd><a class="headerlink" href="#cli_reference_config_show_config_type" title="Link to this argument">#</a></dt>
+<dd><p>Config to show in format &lt;CONFIG_TYPE&gt;[:&lt;revision&gt;]</p>
 </dd>
-<dt><kbd class="kbd docutils literal notranslate">names</kbd></dt><dd><p>Optional names/indices to index into the config. Can be used to show a named config.</p>
+<dt id="cli_reference_config_show_names"><kbd>names</kbd><a class="headerlink" href="#cli_reference_config_show_names" title="Link to this argument">#</a></dt>
+<dd><p>Optional names/indices to index into the config. Can be used to show a named config.</p>
 </dd>
 </dl>
 </section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<p><p>Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW</p>
+</p>
+<section id="cli_reference_config_show_examples">
+<h2>Examples<a class="headerlink" href="#cli_reference_config_show_examples" title="Link to this heading">#</a></h2>
 <p>Show a service configuration in JSON format:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>show<span class="w"> </span>SERVICE
-<span class="o">{</span>
-<span class="w">  </span><span class="s2">&quot;agent_queue_size&quot;</span>:<span class="w"> </span><span class="m">1024</span>,
-<span class="w">  </span><span class="s2">&quot;cli_config&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;latest_version&quot;</span>:<span class="w"> </span><span class="s2">&quot;6.0.0&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;min_supported_version&quot;</span>:<span class="w"> </span>null
-<span class="w">  </span><span class="o">}</span>,
-<span class="w">  </span><span class="s2">&quot;max_pod_restart_limit&quot;</span>:<span class="w"> </span><span class="s2">&quot;30m&quot;</span>,
-<span class="w">  </span><span class="s2">&quot;service_auth&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;active_key&quot;</span>:<span class="w"> </span><span class="s2">&quot;12345678-1234-5678-1234-567812345678&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;audience&quot;</span>:<span class="w"> </span><span class="s2">&quot;osmo&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;issuer&quot;</span>:<span class="w"> </span><span class="s2">&quot;osmo&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;keys&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">      </span><span class="s2">&quot;12345678-1234-5678-1234-567812345678&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="s2">&quot;private_key&quot;</span>:<span class="w"> </span><span class="s2">&quot;**********&quot;</span>,
-<span class="w">        </span><span class="s2">&quot;public_key&quot;</span>:<span class="w"> </span><span class="o">{</span><span class="s2">&quot;e&quot;</span>:<span class="s2">&quot;AQAB&quot;</span>,<span class="s2">&quot;kid&quot;</span>:<span class="s2">&quot;12345678-1234-5678-1234-567812345678&quot;</span>,<span class="s2">&quot;kty&quot;</span>:<span class="s2">&quot;RSA&quot;</span>,<span class="s2">&quot;n&quot;</span>:<span class="s2">&quot;**********&quot;</span><span class="o">}</span>
-<span class="w">      </span><span class="o">}</span>
-<span class="w">    </span><span class="o">}</span>,
-<span class="w">    </span><span class="s2">&quot;user_roles&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;osmo-user&quot;</span><span class="o">]</span>,
-<span class="w">    </span><span class="s2">&quot;ctrl_roles&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;osmo-user&quot;</span>,<span class="w"> </span><span class="s2">&quot;osmo-ctrl&quot;</span><span class="o">]</span>
-<span class="w">  </span><span class="o">}</span>,
-<span class="w">  </span><span class="s2">&quot;service_base_url&quot;</span>:<span class="w"> </span><span class="s2">&quot;|osmo_url|:443&quot;</span>
-<span class="o">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">show</span> <span class="n">SERVICE</span>
 </pre></div>
 </div>
 <p>Show the <code class="docutils literal notranslate"><span class="pre">default_cpu</span></code> resource validation rule:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>show<span class="w"> </span>RESOURCE_VALIDATION<span class="w"> </span>default_cpu
-<span class="o">[</span>
-<span class="w">  </span><span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;operator&quot;</span>:<span class="w"> </span><span class="s2">&quot;LE&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;left_operand&quot;</span>:<span class="w"> </span><span class="s2">&quot;{% if USER_CPU is none %}1{% else %}{{USER_CPU}}{% endif %}&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;right_operand&quot;</span>:<span class="w"> </span><span class="s2">&quot;{{K8_CPU}}&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;assert_message&quot;</span>:<span class="w"> </span><span class="s2">&quot;Value {% if USER_CPU is none %}1{% else %}{{USER_CPU}}{% endif %} too high for CPU&quot;</span>
-<span class="w">  </span><span class="o">}</span>,
-<span class="w">  </span><span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;operator&quot;</span>:<span class="w"> </span><span class="s2">&quot;GT&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;left_operand&quot;</span>:<span class="w"> </span><span class="s2">&quot;{% if USER_CPU is none %}1{% else %}{{USER_CPU}}{% endif %}&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;right_operand&quot;</span>:<span class="w"> </span><span class="s2">&quot;0&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;assert_message&quot;</span>:<span class="w"> </span><span class="s2">&quot;Value {% if USER_CPU is none %}1{% else %}{{USER_CPU}}{% endif %} needs to be greater than 0 for CPU&quot;</span>
-<span class="w">  </span><span class="o">}</span>
-<span class="o">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">show</span> <span class="n">RESOURCE_VALIDATION</span> <span class="n">default_cpu</span>
 </pre></div>
 </div>
 <p>Show the <code class="docutils literal notranslate"><span class="pre">user_workflow_limits</span></code> workflow configuration in a previous revision:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>show<span class="w"> </span>WORKFLOW:3<span class="w"> </span>user_workflow_limits
-<span class="o">{</span>
-<span class="w">  </span><span class="s2">&quot;max_num_workflows&quot;</span>:<span class="w"> </span>null,
-<span class="w">  </span><span class="s2">&quot;max_num_tasks&quot;</span>:<span class="w"> </span><span class="m">6000</span>
-<span class="o">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">show</span> <span class="n">WORKFLOW</span><span class="p">:</span><span class="mi">3</span> <span class="n">user_workflow_limits</span>
 </pre></div>
 </div>
 </section>
@@ -618,8 +577,8 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-arguments">Positional Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#src.cli.main_parser-create_cli_parser-positional-arguments">Positional Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cli_reference_config_show_examples">Examples</a></li>
 </ul>
   </nav></div>
 

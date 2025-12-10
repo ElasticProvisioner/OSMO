@@ -161,6 +161,7 @@ workflow:
 >
 > Make sure to use the correct platform for the machine you are using.
 > Check the annotations for the platform in the resource spec.
+> To read more about this, please refer to [Platforms](../resource_pools/index.md#concepts-platforms).
 
 Next we will add the discovery-server task:
 

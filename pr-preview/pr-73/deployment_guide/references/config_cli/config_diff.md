@@ -20,37 +20,35 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 Show the difference between two config revisions
 
+Available config types (config_type): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
+
 ```default
-osmo config diff [-h] first [second]
-
-Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
-
-Ex. osmo config diff WORKFLOW:15
-Ex. osmo config diff SERVICE:14 SERVICE:15
+usage: osmo config diff [-h] first [second]
 ```
 
 ## Positional Arguments
 
-`first`
-: First config to compare. Format: <CONFIG_TYPE>[:<revision>] (e.g. BACKEND:3). If no revision is provided, uses the current revision.
+* **first**: 
 
-`second`
-: Second config to compare. Format: <CONFIG_TYPE>[:<revision>] (e.g. BACKEND:6). If no revision is provided, uses the current revision.
+First config to compare. Format: <config_type>[:<revision>] (e.g. BACKEND:3). If no revision is provided, uses the current revision.
+* **second**: 
+
+Second config to compare. Format: <config_type>[:<revision>] (e.g. BACKEND:6). If no revision is provided, uses the current revision.
 
 ## Examples
 
 Show changes made to the workflow config since revision 15:
 
-```bash
-$ osmo config diff WORKFLOW:15
+```default
+osmo config diff WORKFLOW:15
 ```
 
 ![image](deployment_guide/references/config_cli/images/config_diff_workflow.png)
 
 Show changes made between two revisions of the service configuration:
 
-```bash
-$ osmo config diff SERVICE:14 SERVICE:15
+```default
+osmo config diff SERVICE:14 SERVICE:15
 ```
 
 ![image](deployment_guide/references/config_cli/images/config_diff_service.png)

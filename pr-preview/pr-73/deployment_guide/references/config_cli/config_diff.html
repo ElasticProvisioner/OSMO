@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/collapsible_code_block.css?v=fddc5587" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f1a55564" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f411dd76" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/lifecycle-timeline.css?v=b1697d17" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/mermaid_custom.css?v=e845640e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/versioning.css?v=ed00f604" />
@@ -493,36 +493,35 @@
                   
   <section id="osmo-config-diff">
 <span id="cli-reference-config-diff"></span><h1>osmo config diff<a class="headerlink" href="#osmo-config-diff" title="Link to this heading">#</a></h1>
-<p>Show the difference between two config revisions</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">diff</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">first</span> <span class="p">[</span><span class="n">second</span><span class="p">]</span>
-
-<span class="n">Available</span> <span class="n">config</span> <span class="n">types</span> <span class="p">(</span><span class="n">CONFIG_TYPE</span><span class="p">):</span> <span class="n">BACKEND</span><span class="p">,</span> <span class="n">BACKEND_TEST</span><span class="p">,</span> <span class="n">DATASET</span><span class="p">,</span> <span class="n">POD_TEMPLATE</span><span class="p">,</span> <span class="n">POOL</span><span class="p">,</span> <span class="n">RESOURCE_VALIDATION</span><span class="p">,</span> <span class="n">ROLE</span><span class="p">,</span> <span class="n">SERVICE</span><span class="p">,</span> <span class="n">WORKFLOW</span>
-
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">diff</span> <span class="n">WORKFLOW</span><span class="p">:</span><span class="mi">15</span>
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">diff</span> <span class="n">SERVICE</span><span class="p">:</span><span class="mi">14</span> <span class="n">SERVICE</span><span class="p">:</span><span class="mi">15</span>
+<p><p>Show the difference between two config revisions</p>
+<p>Available config types (config_type): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW</p>
+</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">diff</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">first</span> <span class="p">[</span><span class="n">second</span><span class="p">]</span>
 </pre></div>
 </div>
-<section id="positional-arguments">
-<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Link to this heading">#</a></h2>
-<dl class="simple">
-<dt><kbd class="kbd docutils literal notranslate">first</kbd></dt><dd><p>First config to compare. Format: &lt;CONFIG_TYPE&gt;[:&lt;revision&gt;] (e.g. BACKEND:3). If no revision is provided, uses the current revision.</p>
+<section id="src.cli.main_parser-create_cli_parser-positional-arguments">
+<h2>Positional Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-positional-arguments" title="Link to this heading">#</a></h2>
+<dl class="option-list">
+<dt id="cli_reference_config_diff_first"><kbd>first</kbd><a class="headerlink" href="#cli_reference_config_diff_first" title="Link to this argument">#</a></dt>
+<dd><p>First config to compare. Format: &lt;config_type&gt;[:&lt;revision&gt;] (e.g. BACKEND:3). If no revision is provided, uses the current revision.</p>
 </dd>
-<dt><kbd class="kbd docutils literal notranslate">second</kbd></dt><dd><p>Second config to compare. Format: &lt;CONFIG_TYPE&gt;[:&lt;revision&gt;] (e.g. BACKEND:6). If no revision is provided, uses the current revision.</p>
+<dt id="cli_reference_config_diff_second"><kbd>second</kbd><a class="headerlink" href="#cli_reference_config_diff_second" title="Link to this argument">#</a></dt>
+<dd><p>Second config to compare. Format: &lt;config_type&gt;[:&lt;revision&gt;] (e.g. BACKEND:6). If no revision is provided, uses the current revision.</p>
 </dd>
 </dl>
 </section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<section id="cli_reference_config_diff_examples">
+<h2>Examples<a class="headerlink" href="#cli_reference_config_diff_examples" title="Link to this heading">#</a></h2>
 <p>Show changes made to the workflow config since revision 15:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>diff<span class="w"> </span>WORKFLOW:15
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">diff</span> <span class="n">WORKFLOW</span><span class="p">:</span><span class="mi">15</span>
 </pre></div>
 </div>
-<img alt="../../../_images/config_diff_workflow.png" src="../../../_images/config_diff_workflow.png" />
+<img alt="../../../_images/config_diff_workflow.png" class="mb-2 align-center" src="../../../_images/config_diff_workflow.png" />
 <p>Show changes made between two revisions of the service configuration:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>diff<span class="w"> </span>SERVICE:14<span class="w"> </span>SERVICE:15
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">diff</span> <span class="n">SERVICE</span><span class="p">:</span><span class="mi">14</span> <span class="n">SERVICE</span><span class="p">:</span><span class="mi">15</span>
 </pre></div>
 </div>
-<img alt="../../../_images/config_diff_service.png" src="../../../_images/config_diff_service.png" />
+<img alt="../../../_images/config_diff_service.png" class="mb-2 align-center" src="../../../_images/config_diff_service.png" />
 </section>
 </section>
 
@@ -575,8 +574,8 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-arguments">Positional Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#src.cli.main_parser-create_cli_parser-positional-arguments">Positional Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cli_reference_config_diff_examples">Examples</a></li>
 </ul>
   </nav></div>
 

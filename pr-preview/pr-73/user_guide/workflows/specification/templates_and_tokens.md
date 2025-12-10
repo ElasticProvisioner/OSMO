@@ -202,7 +202,7 @@ workflow:
       files:
       - contents: |
           retries=45
-          while ! nslookup {{host:server}} > /dev/null ; do
+          while ! nslookup -type=A {{host:server}} > /dev/null ; do
             echo "Waiting for server pod, $retries retries left..."
             if [ $retries -eq 0 ] ; then
               echo "Server pod not started in time!"

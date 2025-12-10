@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/collapsible_code_block.css?v=fddc5587" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f1a55564" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f411dd76" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/lifecycle-timeline.css?v=b1697d17" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/mermaid_custom.css?v=e845640e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/versioning.css?v=ed00f604" />
@@ -682,7 +682,7 @@ substituted with relevant values by the service.</p>
 <span class="w">      </span><span class="nt">files</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">          </span><span class="no">retries=45</span>
-<span class="w">          </span><span class="no">while ! nslookup {{host:server}} &gt; /dev/null ; do</span>
+<span class="w">          </span><span class="no">while ! nslookup -type=A {{host:server}} &gt; /dev/null ; do</span>
 <span class="w">            </span><span class="no">echo &quot;Waiting for server pod, $retries retries left...&quot;</span>
 <span class="w">            </span><span class="no">if [ $retries -eq 0 ] ; then</span>
 <span class="w">              </span><span class="no">echo &quot;Server pod not started in time!&quot;</span>

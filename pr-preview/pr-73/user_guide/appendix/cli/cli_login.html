@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/collapsible_code_block.css?v=fddc5587" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f1a55564" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f411dd76" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/lifecycle-timeline.css?v=b1697d17" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/mermaid_custom.css?v=e845640e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/versioning.css?v=ed00f604" />
@@ -517,7 +517,7 @@
 <section id="src.cli.main_parser-create_cli_parser-positional-arguments">
 <h2>Positional Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-positional-arguments" title="Link to this heading">#</a></h2>
 <dl class="option-list">
-<dt><kbd>url</kbd></dt>
+<dt id="cli_reference_login_url"><kbd>url</kbd><a class="headerlink" href="#cli_reference_login_url" title="Link to this argument">#</a></dt>
 <dd><p>The url of the osmo server to connect to</p>
 </dd>
 </dl>
@@ -525,27 +525,27 @@
 <section id="src.cli.main_parser-create_cli_parser-named-arguments">
 <h2>Named Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-named-arguments" title="Link to this heading">#</a></h2>
 <dl class="option-list">
-<dt><kbd>--device-endpoint</kbd></dt>
+<dt id="cli_reference_login_device_endpoint"><kbd>--device-endpoint</kbd><a class="headerlink" href="#cli_reference_login_device_endpoint" title="Link to this argument">#</a></dt>
 <dd><p>The url to use to completed device flow authentication. If not provided, it will be fetched from the service.</p>
 </dd>
-<dt><kbd>--method</kbd></dt>
+<dt id="cli_reference_login_method"><kbd>--method</kbd><a class="headerlink" href="#cli_reference_login_method" title="Link to this argument">#</a></dt>
 <dd><p>Possible choices: code, password, token, dev</p>
 <p>code: Get a device code and url to log in securely through browser. password: Provide username and password directly through CLI. token: Read an idToken directly from a file.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">'code'</span></code></p>
 </dd>
-<dt><kbd>--username</kbd></dt>
+<dt id="cli_reference_login_username"><kbd>--username</kbd><a class="headerlink" href="#cli_reference_login_username" title="Link to this argument">#</a></dt>
 <dd><p>Username if logging in with credentials. This should only be used for service accounts that cannot authenticate via web browser.</p>
 </dd>
-<dt><kbd>--password</kbd></dt>
+<dt id="cli_reference_login_password"><kbd>--password</kbd><a class="headerlink" href="#cli_reference_login_password" title="Link to this argument">#</a></dt>
 <dd><p>Password if logging in with credentials.</p>
 </dd>
-<dt><kbd>--password-file</kbd></dt>
+<dt id="cli_reference_login_password_file"><kbd>--password-file</kbd><a class="headerlink" href="#cli_reference_login_password_file" title="Link to this argument">#</a></dt>
 <dd><p>File containing password if logging in with credentials.</p>
 </dd>
-<dt><kbd>--token</kbd></dt>
+<dt id="cli_reference_login_token"><kbd>--token</kbd><a class="headerlink" href="#cli_reference_login_token" title="Link to this argument">#</a></dt>
 <dd><p>Token if logging in with credentials.</p>
 </dd>
-<dt><kbd>--token-file</kbd></dt>
+<dt id="cli_reference_login_token_file"><kbd>--token-file</kbd><a class="headerlink" href="#cli_reference_login_token_file" title="Link to this argument">#</a></dt>
 <dd><p>File containing the refresh token URL, with all parameters appended.</p>
 </dd>
 </dl>

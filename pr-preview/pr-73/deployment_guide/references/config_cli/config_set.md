@@ -20,28 +20,23 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 Set a field into the config
 
-Currently, the only supported config type is `ROLE` and the only supported field type for `ROLE`
-is `backend` and `pool`.
-
 ```default
-osmo config set [-h] config_type name type [--field FIELD] [--description DESCRIPTION] [--tags TAGS [TAGS ...]]
-
-Available config types (CONFIG_TYPE): ROLE
-
-Ex. osmo config set ROLE my-backend-role backend --field name-of-backend
-Ex. osmo config set ROLE osmo-<pool-name-prefix> pool
+usage: osmo config set [-h] config_type name type [--field FIELD] [--description DESCRIPTION] [--tags TAGS [TAGS ...]]
 ```
 
 ## Positional Arguments
 
-`config_type`
-: Config type to set (CONFIG_TYPE)
+* **config_type**: 
 
-`name`
-: Name of the role
+Possible choices: ROLE
 
-`type`
-: Type of field
+Config type to set (CONFIG_TYPE)
+* **name**: 
+
+Name of the role
+* **type**: 
+
+Type of field
 
 ## Named Arguments
 
@@ -55,13 +50,14 @@ Optional description for the set action
 
 Optional tags for the set action
 
+Available config types (CONFIG_TYPE): ROLE
+
 ## Examples
 
 Creating a new pool role:
 
-```bash
-$ osmo config set ROLE osmo-pool-name pool
-Successfully set ROLE osmo-pool-name
+```default
+osmo config set ROLE osmo-pool-name pool
 ```
 
 > **Note**
@@ -72,7 +68,6 @@ Successfully set ROLE osmo-pool-name
 
 Creating a new backend role:
 
-```bash
-$ osmo config set ROLE my-backend-role backend --field name-of-backend
-Successfully set ROLE my-backend-role
+```default
+osmo config set ROLE my-backend-role backend --field name-of-backend
 ```

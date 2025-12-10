@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/collapsible_code_block.css?v=fddc5587" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f1a55564" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f411dd76" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/lifecycle-timeline.css?v=b1697d17" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/mermaid_custom.css?v=e845640e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/versioning.css?v=ed00f604" />
@@ -493,47 +493,46 @@
                   
   <section id="osmo-config-set">
 <span id="cli-reference-config-set"></span><h1>osmo config set<a class="headerlink" href="#osmo-config-set" title="Link to this heading">#</a></h1>
-<p>Set a field into the config</p>
-<p>Currently, the only supported config type is <code class="docutils literal notranslate"><span class="pre">ROLE</span></code> and the only supported field type for <code class="docutils literal notranslate"><span class="pre">ROLE</span></code>
-is <code class="docutils literal notranslate"><span class="pre">backend</span></code> and <code class="docutils literal notranslate"><span class="pre">pool</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="nb">set</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">config_type</span> <span class="n">name</span> <span class="nb">type</span> <span class="p">[</span><span class="o">--</span><span class="n">field</span> <span class="n">FIELD</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">description</span> <span class="n">DESCRIPTION</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tags</span> <span class="n">TAGS</span> <span class="p">[</span><span class="n">TAGS</span> <span class="o">...</span><span class="p">]]</span>
-
-<span class="n">Available</span> <span class="n">config</span> <span class="n">types</span> <span class="p">(</span><span class="n">CONFIG_TYPE</span><span class="p">):</span> <span class="n">ROLE</span>
-
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="nb">set</span> <span class="n">ROLE</span> <span class="n">my</span><span class="o">-</span><span class="n">backend</span><span class="o">-</span><span class="n">role</span> <span class="n">backend</span> <span class="o">--</span><span class="n">field</span> <span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">backend</span>
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="nb">set</span> <span class="n">ROLE</span> <span class="n">osmo</span><span class="o">-&lt;</span><span class="n">pool</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="n">pool</span>
+<p><p>Set a field into the config</p>
+</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">osmo</span> <span class="n">config</span> <span class="nb">set</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">config_type</span> <span class="n">name</span> <span class="nb">type</span> <span class="p">[</span><span class="o">--</span><span class="n">field</span> <span class="n">FIELD</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">description</span> <span class="n">DESCRIPTION</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tags</span> <span class="n">TAGS</span> <span class="p">[</span><span class="n">TAGS</span> <span class="o">...</span><span class="p">]]</span>
 </pre></div>
 </div>
-<section id="positional-arguments">
-<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Link to this heading">#</a></h2>
-<dl class="simple">
-<dt><kbd class="kbd docutils literal notranslate">config_type</kbd></dt><dd><p>Config type to set (CONFIG_TYPE)</p>
+<section id="src.cli.main_parser-create_cli_parser-positional-arguments">
+<h2>Positional Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-positional-arguments" title="Link to this heading">#</a></h2>
+<dl class="option-list">
+<dt id="cli_reference_config_set_config_type"><kbd>config_type</kbd><a class="headerlink" href="#cli_reference_config_set_config_type" title="Link to this argument">#</a></dt>
+<dd><p>Possible choices: ROLE</p>
+<p>Config type to set (CONFIG_TYPE)</p>
 </dd>
-<dt><kbd class="kbd docutils literal notranslate">name</kbd></dt><dd><p>Name of the role</p>
+<dt id="cli_reference_config_set_name"><kbd>name</kbd><a class="headerlink" href="#cli_reference_config_set_name" title="Link to this argument">#</a></dt>
+<dd><p>Name of the role</p>
 </dd>
-<dt><kbd class="kbd docutils literal notranslate">type</kbd></dt><dd><p>Type of field</p>
+<dt id="cli_reference_config_set_type"><kbd>type</kbd><a class="headerlink" href="#cli_reference_config_set_type" title="Link to this argument">#</a></dt>
+<dd><p>Type of field</p>
 </dd>
 </dl>
 </section>
-<section id="named-arguments">
-<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Link to this heading">#</a></h2>
+<section id="src.cli.main_parser-create_cli_parser-named-arguments">
+<h2>Named Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-named-arguments" title="Link to this heading">#</a></h2>
 <dl class="option-list">
-<dt><kbd><span class="option">--field</span></kbd></dt>
+<dt id="cli_reference_config_set_field"><kbd>--field</kbd><a class="headerlink" href="#cli_reference_config_set_field" title="Link to this argument">#</a></dt>
 <dd><p>Field name in context. For example, the backend to target.</p>
 </dd>
-<dt><kbd><span class="option">--description</span></kbd></dt>
+<dt id="cli_reference_config_set_description"><kbd>--description</kbd><a class="headerlink" href="#cli_reference_config_set_description" title="Link to this argument">#</a></dt>
 <dd><p>Optional description for the set action</p>
 </dd>
-<dt><kbd><span class="option">--tags</span></kbd></dt>
+<dt id="cli_reference_config_set_tags"><kbd>--tags</kbd><a class="headerlink" href="#cli_reference_config_set_tags" title="Link to this argument">#</a></dt>
 <dd><p>Optional tags for the set action</p>
 </dd>
 </dl>
 </section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<p><p>Available config types (CONFIG_TYPE): ROLE</p>
+</p>
+<section id="cli_reference_config_set_examples">
+<h2>Examples<a class="headerlink" href="#cli_reference_config_set_examples" title="Link to this heading">#</a></h2>
 <p>Creating a new pool role:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>ROLE<span class="w"> </span>osmo-pool-name<span class="w"> </span>pool
-Successfully<span class="w"> </span><span class="nb">set</span><span class="w"> </span>ROLE<span class="w"> </span>osmo-pool-name
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="nb">set</span> <span class="n">ROLE</span> <span class="n">osmo</span><span class="o">-</span><span class="n">pool</span><span class="o">-</span><span class="n">name</span> <span class="n">pool</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -543,8 +542,7 @@ can see the pool in the UI and profile settings. This will be changed to be more
 in the future.</p>
 </div>
 <p>Creating a new backend role:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>ROLE<span class="w"> </span>my-backend-role<span class="w"> </span>backend<span class="w"> </span>--field<span class="w"> </span>name-of-backend
-Successfully<span class="w"> </span><span class="nb">set</span><span class="w"> </span>ROLE<span class="w"> </span>my-backend-role
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="nb">set</span> <span class="n">ROLE</span> <span class="n">my</span><span class="o">-</span><span class="n">backend</span><span class="o">-</span><span class="n">role</span> <span class="n">backend</span> <span class="o">--</span><span class="n">field</span> <span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">backend</span>
 </pre></div>
 </div>
 </section>
@@ -599,9 +597,9 @@ Successfully<span class="w"> </span><span class="nb">set</span><span class="w"> 
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-arguments">Positional Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#named-arguments">Named Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#src.cli.main_parser-create_cli_parser-positional-arguments">Positional Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#src.cli.main_parser-create_cli_parser-named-arguments">Named Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cli_reference_config_set_examples">Examples</a></li>
 </ul>
   </nav></div>
 

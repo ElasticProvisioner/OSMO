@@ -21,51 +21,45 @@ SPDX-License-Identifier: Apache-2.0 -->
 Delete a named configuration or a specific config revision
 
 ```default
-osmo config delete [-h] config_type [name] [--description DESCRIPTION] [--tags TAGS [TAGS ...]]
-
-Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE
-
-Ex. osmo config delete POOL my-pool
-Ex. osmo config delete SERVICE:123
-Ex. osmo config delete BACKEND my-backend --description "Removing unused backend" --tags cleanup deprecated
+usage: osmo config delete [-h] config_type [name] [--description DESCRIPTION] [--tags TAGS [TAGS ...]]
 ```
 
 ## Positional Arguments
 
-`config_type`
-: Type of config to delete (CONFIG_TYPE) or CONFIG_TYPE:revision_number to delete a specific revision
+* **config_type**: 
 
-`name`
-: Name of the config to delete (required when not deleting a revision)
+Type of config to delete (CONFIG_TYPE) or CONFIG_TYPE:revision_number to delete a specific revision
+* **name**: 
+
+Name of the config to delete (required when not deleting a revision)
 
 ## Named Arguments
 
-* **--description-d**: 
+* **--description, -d**: 
 
 Description of the deletion (only used when deleting a named config)
-* **--tags-t**: 
+* **--tags, -t**: 
 
 Tags for the deletion (only used when deleting a named config)
+
+Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE
 
 ## Examples
 
 Delete a named pool configuration:
 
-```bash
-$ osmo config delete POOL my-pool
-Successfully deleted POOL config "my-pool"
+```default
+osmo config delete POOL my-pool
 ```
 
 Delete a specific revision:
 
-```bash
-$ osmo config delete SERVICE:123
-Successfully deleted revision 123 of SERVICE config
+```default
+osmo config delete SERVICE:123
 ```
 
 Delete with description and tags:
 
-```bash
-$ osmo config delete BACKEND my-backend --description "Removing unused backend" --tags cleanup deprecated
-Successfully deleted BACKEND config "my-backend"
+```default
+osmo config delete BACKEND my-backend --description "Removing unused backend" --tags cleanup deprecated
 ```

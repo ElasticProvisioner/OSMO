@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/collapsible_code_block.css?v=fddc5587" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f1a55564" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f411dd76" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/lifecycle-timeline.css?v=b1697d17" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/mermaid_custom.css?v=e845640e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/versioning.css?v=ed00f604" />
@@ -493,128 +493,83 @@
                   
   <section id="osmo-config-history">
 <span id="cli-reference-config-history"></span><h1>osmo config history<a class="headerlink" href="#osmo-config-history" title="Link to this heading">#</a></h1>
-<p>List history of configuration changes</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">history</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="n">config_type</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">offset</span> <span class="n">OFFSET</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">count</span> <span class="n">COUNT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">order</span> <span class="p">{</span><span class="n">asc</span><span class="p">,</span><span class="n">desc</span><span class="p">}]</span> <span class="p">[</span><span class="o">--</span><span class="n">name</span> <span class="n">NAME</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">revision</span> <span class="n">REVISION</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tags</span> <span class="n">TAGS</span> <span class="p">[</span><span class="n">TAGS</span> <span class="o">...</span><span class="p">]]</span> <span class="p">[</span><span class="o">--</span><span class="n">at</span><span class="o">-</span><span class="n">timestamp</span> <span class="n">AT_TIMESTAMP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">created</span><span class="o">-</span><span class="n">before</span> <span class="n">CREATED_BEFORE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">created</span><span class="o">-</span><span class="n">after</span> <span class="n">CREATED_AFTER</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">format</span><span class="o">-</span><span class="nb">type</span> <span class="p">{</span><span class="n">json</span><span class="p">,</span><span class="n">text</span><span class="p">}]</span> <span class="p">[</span><span class="o">--</span><span class="n">fit</span><span class="o">-</span><span class="n">width</span><span class="p">]</span>
-
-<span class="n">Available</span> <span class="n">config</span> <span class="n">types</span> <span class="p">(</span><span class="n">CONFIG_TYPE</span><span class="p">):</span> <span class="n">BACKEND</span><span class="p">,</span> <span class="n">BACKEND_TEST</span><span class="p">,</span> <span class="n">DATASET</span><span class="p">,</span> <span class="n">POD_TEMPLATE</span><span class="p">,</span> <span class="n">POOL</span><span class="p">,</span> <span class="n">RESOURCE_VALIDATION</span><span class="p">,</span> <span class="n">ROLE</span><span class="p">,</span> <span class="n">SERVICE</span><span class="p">,</span> <span class="n">WORKFLOW</span>
-
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">history</span>
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">history</span> <span class="o">--</span><span class="nb">format</span><span class="o">-</span><span class="nb">type</span> <span class="n">json</span> <span class="o">--</span><span class="n">offset</span> <span class="mi">10</span> <span class="o">--</span><span class="n">count</span> <span class="mi">2</span>
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">history</span> <span class="n">SERVICE</span>
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">history</span> <span class="o">--</span><span class="n">created</span><span class="o">-</span><span class="n">after</span> <span class="s2">&quot;2025-05-18&quot;</span> <span class="o">--</span><span class="n">created</span><span class="o">-</span><span class="n">before</span> <span class="s2">&quot;2025-05-25&quot;</span>
+<p><p>List history of configuration changes</p>
+</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">history</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="n">config_type</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">offset</span> <span class="n">OFFSET</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">count</span> <span class="n">COUNT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">order</span> <span class="p">{</span><span class="n">asc</span><span class="p">,</span><span class="n">desc</span><span class="p">}]</span> <span class="p">[</span><span class="o">--</span><span class="n">name</span> <span class="n">NAME</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">revision</span> <span class="n">REVISION</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tags</span> <span class="n">TAGS</span> <span class="p">[</span><span class="n">TAGS</span> <span class="o">...</span><span class="p">]]</span> <span class="p">[</span><span class="o">--</span><span class="n">at</span><span class="o">-</span><span class="n">timestamp</span> <span class="n">AT_TIMESTAMP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">created</span><span class="o">-</span><span class="n">before</span> <span class="n">CREATED_BEFORE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">created</span><span class="o">-</span><span class="n">after</span> <span class="n">CREATED_AFTER</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">format</span><span class="o">-</span><span class="nb">type</span> <span class="p">{</span><span class="n">json</span><span class="p">,</span><span class="n">text</span><span class="p">}]</span> <span class="p">[</span><span class="o">--</span><span class="n">fit</span><span class="o">-</span><span class="n">width</span><span class="p">]</span>
 </pre></div>
 </div>
-<section id="positional-arguments">
-<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Link to this heading">#</a></h2>
-<dl class="simple">
-<dt><kbd class="kbd docutils literal notranslate">config_type</kbd></dt><dd><p>Config type to show history for (CONFIG_TYPE)</p>
+<section id="src.cli.main_parser-create_cli_parser-positional-arguments">
+<h2>Positional Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-positional-arguments" title="Link to this heading">#</a></h2>
+<dl class="option-list">
+<dt id="cli_reference_config_history_config_type"><kbd>config_type</kbd><a class="headerlink" href="#cli_reference_config_history_config_type" title="Link to this argument">#</a></dt>
+<dd><p>Possible choices: BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW</p>
+<p>Config type to show history for (CONFIG_TYPE)</p>
 </dd>
 </dl>
 </section>
-<section id="named-arguments">
-<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Link to this heading">#</a></h2>
+<section id="src.cli.main_parser-create_cli_parser-named-arguments">
+<h2>Named Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-named-arguments" title="Link to this heading">#</a></h2>
 <dl class="option-list">
-<dt><kbd><span class="option">--offset</span>, <span class="option">-o</span></kbd></dt>
+<dt id="cli_reference_config_history_offset"><kbd>--offset, -o</kbd><a class="headerlink" href="#cli_reference_config_history_offset" title="Link to this argument">#</a></dt>
 <dd><p>Number of records to skip for pagination (default 0)</p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </dd>
-<dt><kbd><span class="option">--count</span>, <span class="option">-c</span></kbd></dt>
+<dt id="cli_reference_config_history_count"><kbd>--count, -c</kbd><a class="headerlink" href="#cli_reference_config_history_count" title="Link to this argument">#</a></dt>
 <dd><p>Maximum number of records to return (default 20, max 1000)</p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">20</span></code></p>
 </dd>
-<dt><kbd><span class="option">--order</span></kbd></dt>
+<dt id="cli_reference_config_history_order"><kbd>--order</kbd><a class="headerlink" href="#cli_reference_config_history_order" title="Link to this argument">#</a></dt>
 <dd><p>Possible choices: asc, desc</p>
 <p>Sort order by creation time (default asc)</p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">'asc'</span></code></p>
 </dd>
-<dt><kbd><span class="option">--name</span>, <span class="option">-n</span></kbd></dt>
+<dt id="cli_reference_config_history_name"><kbd>--name, -n</kbd><a class="headerlink" href="#cli_reference_config_history_name" title="Link to this argument">#</a></dt>
 <dd><p>Filter by changes to a particular config, e.g. “isaac-hil” pool</p>
 </dd>
-<dt><kbd><span class="option">--revision</span>, <span class="option">-r</span></kbd></dt>
+<dt id="cli_reference_config_history_revision"><kbd>--revision, -r</kbd><a class="headerlink" href="#cli_reference_config_history_revision" title="Link to this argument">#</a></dt>
 <dd><p>Filter by revision number</p>
 </dd>
-<dt><kbd><span class="option">--tags</span></kbd></dt>
+<dt id="cli_reference_config_history_tags"><kbd>--tags</kbd><a class="headerlink" href="#cli_reference_config_history_tags" title="Link to this argument">#</a></dt>
 <dd><p>Filter by tags</p>
 </dd>
-<dt><kbd><span class="option">--at-timestamp</span></kbd></dt>
+<dt id="cli_reference_config_history_at_timestamp"><kbd>--at-timestamp</kbd><a class="headerlink" href="#cli_reference_config_history_at_timestamp" title="Link to this argument">#</a></dt>
 <dd><p>Get config state at specific timestamp (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS) in current timezone</p>
 </dd>
-<dt><kbd><span class="option">--created-before</span></kbd></dt>
+<dt id="cli_reference_config_history_created_before"><kbd>--created-before</kbd><a class="headerlink" href="#cli_reference_config_history_created_before" title="Link to this argument">#</a></dt>
 <dd><p>Filter by creation time before (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS) in current timezone</p>
 </dd>
-<dt><kbd><span class="option">--created-after</span></kbd></dt>
+<dt id="cli_reference_config_history_created_after"><kbd>--created-after</kbd><a class="headerlink" href="#cli_reference_config_history_created_after" title="Link to this argument">#</a></dt>
 <dd><p>Filter by creation time after (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS) in current timezone</p>
 </dd>
-<dt><kbd><span class="option">--format-type</span>, <span class="option">-t</span></kbd></dt>
+<dt id="cli_reference_config_history_format_type"><kbd>--format-type, -t</kbd><a class="headerlink" href="#cli_reference_config_history_format_type" title="Link to this argument">#</a></dt>
 <dd><p>Possible choices: json, text</p>
 <p>Specify the output format type (default text)</p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">'text'</span></code></p>
 </dd>
-<dt><kbd><span class="option">--fit-width</span></kbd></dt>
+<dt id="cli_reference_config_history_fit_width"><kbd>--fit-width</kbd><a class="headerlink" href="#cli_reference_config_history_fit_width" title="Link to this argument">#</a></dt>
 <dd><p>Fit the table width to the terminal width</p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
 </dd>
 </dl>
 </section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<p><p>Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW</p>
+</p>
+<section id="cli_reference_config_history_examples">
+<h2>Examples<a class="headerlink" href="#cli_reference_config_history_examples" title="Link to this heading">#</a></h2>
 <p>View history in text format (default):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span><span class="nb">history</span>
-Config<span class="w"> </span>Type<span class="w">   </span>Name<span class="w">   </span>Revision<span class="w">   </span>Username<span class="w">                  </span>Created<span class="w"> </span>At<span class="w">               </span>Description<span class="w">                       </span><span class="nv">Tags</span>
-<span class="o">=======================================================================================================================================</span>
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">1</span><span class="w">                                    </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">13</span>:55<span class="w"> </span>EDT<span class="w">   </span>Initial<span class="w"> </span>configuration<span class="w">             </span>-
-WORKFLOW<span class="w">      </span>-<span class="w">      </span><span class="m">1</span><span class="w">                                    </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">13</span>:55<span class="w"> </span>EDT<span class="w">   </span>Initial<span class="w"> </span>configuration<span class="w">             </span>-
-DATASET<span class="w">       </span>-<span class="w">      </span><span class="m">1</span><span class="w">                                    </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">13</span>:55<span class="w"> </span>EDT<span class="w">   </span>Initial<span class="w"> </span>configuration<span class="w">             </span>-
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">2</span><span class="w">          </span>user@example.com<span class="w">          </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">14</span>:26<span class="w"> </span>EDT<span class="w">   </span>Test<span class="w"> </span>service<span class="w"> </span>config<span class="w"> </span>patch<span class="w"> </span>-<span class="w"> </span><span class="m">0</span><span class="w">     </span>exampleuser-test-0
-WORKFLOW<span class="w">      </span>-<span class="w">      </span><span class="m">2</span><span class="w">          </span>user@example.com<span class="w">          </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">14</span>:27<span class="w"> </span>EDT<span class="w">   </span>Test<span class="w"> </span>workflow<span class="w"> </span>config<span class="w"> </span>patch<span class="w"> </span>-<span class="w"> </span><span class="m">0</span><span class="w">    </span>exampleuser-test-0
-DATASET<span class="w">       </span>-<span class="w">      </span><span class="m">2</span><span class="w">          </span>user@example.com<span class="w">          </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">14</span>:27<span class="w"> </span>EDT<span class="w">   </span>Test<span class="w"> </span>dataset<span class="w"> </span>config<span class="w"> </span>patch<span class="w"> </span>-<span class="w"> </span><span class="m">0</span><span class="w">     </span>exampleuser-test-0
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">3</span><span class="w">          </span>user@example.com<span class="w">          </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">14</span>:27<span class="w"> </span>EDT<span class="w">   </span>Test<span class="w"> </span>service<span class="w"> </span>config<span class="w"> </span>patch<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w">     </span>exampleuser-test-1
-WORKFLOW<span class="w">      </span>-<span class="w">      </span><span class="m">3</span><span class="w">          </span>svc-account@example.com<span class="w">   </span>May<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">14</span>:13<span class="w"> </span>EDT<span class="w">   </span>Patched<span class="w"> </span>WORKFLOW<span class="w"> </span>configuration<span class="w">    </span>-
-...
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">history</span>
 </pre></div>
 </div>
 <p>View history in JSON format with pagination:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span><span class="nb">history</span><span class="w"> </span>--format-type<span class="w"> </span>json<span class="w"> </span>--offset<span class="w"> </span><span class="m">10</span><span class="w"> </span>--count<span class="w"> </span><span class="m">2</span>
-<span class="o">{</span>
-<span class="w">  </span><span class="s2">&quot;configs&quot;</span>:<span class="w"> </span><span class="o">[</span>
-<span class="w">    </span><span class="o">{</span>
-<span class="w">      </span><span class="s2">&quot;config_type&quot;</span>:<span class="w"> </span><span class="s2">&quot;BACKEND&quot;</span>,
-<span class="w">      </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;isaac&quot;</span>,
-<span class="w">      </span><span class="s2">&quot;revision&quot;</span>:<span class="w"> </span><span class="m">2</span>,
-<span class="w">      </span><span class="s2">&quot;username&quot;</span>:<span class="w"> </span><span class="s2">&quot;user@example.com&quot;</span>,
-<span class="w">      </span><span class="s2">&quot;created_at&quot;</span>:<span class="w"> </span><span class="s2">&quot;2025-05-02T00:30:38.623202&quot;</span>,
-<span class="w">      </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;Set backend &#39;isaac&#39; configuration&quot;</span>,
-<span class="w">      </span><span class="s2">&quot;tags&quot;</span>:<span class="w"> </span>null,
-<span class="w">      </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span>null
-<span class="w">    </span><span class="o">}</span>,
-<span class="w">    </span><span class="o">{</span>
-<span class="w">      </span><span class="s2">&quot;config_type&quot;</span>:<span class="w"> </span><span class="s2">&quot;WORKFLOW&quot;</span>,
-<span class="w">      </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;&quot;</span>,
-<span class="w">      </span><span class="s2">&quot;revision&quot;</span>:<span class="w"> </span><span class="m">5</span>,
-<span class="w">      </span><span class="s2">&quot;username&quot;</span>:<span class="w"> </span><span class="s2">&quot;svc-osmo-admin@example.com&quot;</span>,
-<span class="w">      </span><span class="s2">&quot;created_at&quot;</span>:<span class="w"> </span><span class="s2">&quot;2025-05-06T21:01:13.716128&quot;</span>,
-<span class="w">      </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;Patched WORKFLOW configuration&quot;</span>,
-<span class="w">      </span><span class="s2">&quot;tags&quot;</span>:<span class="w"> </span>null,
-<span class="w">      </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span>null
-<span class="w">    </span><span class="o">}</span>
-<span class="w">  </span><span class="o">]</span>
-<span class="o">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">history</span> <span class="o">--</span><span class="nb">format</span><span class="o">-</span><span class="nb">type</span> <span class="n">json</span> <span class="o">--</span><span class="n">offset</span> <span class="mi">10</span> <span class="o">--</span><span class="n">count</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>View history for a specific configuration type:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span><span class="nb">history</span><span class="w"> </span>SERVICE
-Config<span class="w"> </span>Type<span class="w">   </span>Name<span class="w">   </span>Revision<span class="w">   </span>Username<span class="w">                  </span>Created<span class="w"> </span>At<span class="w">               </span>Description<span class="w">                     </span><span class="nv">Tags</span>
-<span class="o">=====================================================================================================================================</span>
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">1</span><span class="w">                                    </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">13</span>:55<span class="w"> </span>EDT<span class="w">   </span>Initial<span class="w"> </span>configuration<span class="w">           </span>-
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">2</span><span class="w">          </span>user@example.com<span class="w">          </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">14</span>:26<span class="w"> </span>EDT<span class="w">   </span>Test<span class="w"> </span>service<span class="w"> </span>config<span class="w"> </span>patch<span class="w"> </span>-<span class="w"> </span><span class="m">0</span><span class="w">   </span>exampleuser-test-0
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">3</span><span class="w">          </span>user@example.com<span class="w">          </span>Apr<span class="w"> </span><span class="m">29</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">14</span>:27<span class="w"> </span>EDT<span class="w">   </span>Test<span class="w"> </span>service<span class="w"> </span>config<span class="w"> </span>patch<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w">   </span>exampleuser-test-1
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">4</span><span class="w">          </span>svc-account@example.com<span class="w">   </span>May<span class="w"> </span><span class="m">08</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">10</span>:39<span class="w"> </span>EDT<span class="w">   </span>Patched<span class="w"> </span>service<span class="w"> </span>configuration<span class="w">   </span>-
-SERVICE<span class="w">       </span>-<span class="w">      </span><span class="m">5</span><span class="w">          </span>user@example.com<span class="w">          </span>May<span class="w"> </span><span class="m">23</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">18</span>:47<span class="w"> </span>EDT<span class="w">   </span>Update<span class="w"> </span>CLI<span class="w"> </span>version<span class="w">              </span>-
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">history</span> <span class="n">SERVICE</span>
 </pre></div>
 </div>
 <p>View history for a specific time range:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span><span class="nb">history</span><span class="w"> </span>--created-after<span class="w"> </span><span class="s2">&quot;2025-05-18&quot;</span><span class="w"> </span>--created-before<span class="w"> </span><span class="s2">&quot;2025-05-25&quot;</span>
-Config<span class="w"> </span>Type<span class="w">    </span>Name<span class="w">   </span>Revision<span class="w">   </span>Username<span class="w">                  </span>Created<span class="w"> </span>At<span class="w">               </span>Description<span class="w">                      </span><span class="nv">Tags</span>
-<span class="o">===================================================================================================================================</span>
-WORKFLOW<span class="w">       </span>-<span class="w">      </span><span class="m">11</span><span class="w">         </span>svc-account@example.com<span class="w">   </span>May<span class="w"> </span><span class="m">19</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">14</span>:26<span class="w"> </span>EDT<span class="w">   </span>Patched<span class="w"> </span>workflow<span class="w"> </span>configuration<span class="w">   </span>-
-SERVICE<span class="w">        </span>-<span class="w">      </span><span class="m">5</span><span class="w">          </span>user@example.com<span class="w">          </span>May<span class="w"> </span><span class="m">23</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">18</span>:47<span class="w"> </span>EDT<span class="w">   </span>Update<span class="w"> </span>CLI<span class="w"> </span>version<span class="w">               </span>-
-WORKFLOW<span class="w">       </span>-<span class="w">      </span><span class="m">12</span><span class="w">         </span>user@example.com<span class="w">          </span>May<span class="w"> </span><span class="m">23</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">18</span>:50<span class="w"> </span>EDT<span class="w">   </span>Patched<span class="w"> </span>workflow<span class="w"> </span>configuration<span class="w">   </span>-
-WORKFLOW<span class="w">       </span>-<span class="w">      </span><span class="m">13</span><span class="w">         </span>user@example.com<span class="w">          </span>May<span class="w"> </span><span class="m">23</span>,<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">18</span>:55<span class="w"> </span>EDT<span class="w">   </span>Patched<span class="w"> </span>workflow<span class="w"> </span>configuration<span class="w">   </span>-
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">history</span> <span class="o">--</span><span class="n">created</span><span class="o">-</span><span class="n">after</span> <span class="s2">&quot;2025-05-18&quot;</span> <span class="o">--</span><span class="n">created</span><span class="o">-</span><span class="n">before</span> <span class="s2">&quot;2025-05-25&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -669,9 +624,9 @@ WORKFLOW<span class="w">       </span>-<span class="w">      </span><span class=
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-arguments">Positional Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#named-arguments">Named Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#src.cli.main_parser-create_cli_parser-positional-arguments">Positional Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#src.cli.main_parser-create_cli_parser-named-arguments">Named Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cli_reference_config_history_examples">Examples</a></li>
 </ul>
   </nav></div>
 

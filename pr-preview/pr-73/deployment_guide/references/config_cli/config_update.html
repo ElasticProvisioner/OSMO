@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/collapsible_code_block.css?v=fddc5587" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f1a55564" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f411dd76" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/lifecycle-timeline.css?v=b1697d17" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/mermaid_custom.css?v=e845640e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/versioning.css?v=ed00f604" />
@@ -493,64 +493,51 @@
                   
   <section id="osmo-config-update">
 <span id="cli-reference-config-update"></span><h1>osmo config update<a class="headerlink" href="#osmo-config-update" title="Link to this heading">#</a></h1>
-<p>Update a configuration</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">update</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">config_type</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">file</span> <span class="n">FILE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">description</span> <span class="n">DESCRIPTION</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tags</span> <span class="n">TAGS</span> <span class="p">[</span><span class="n">TAGS</span> <span class="o">...</span><span class="p">]]</span>
-
-<span class="n">Available</span> <span class="n">config</span> <span class="n">types</span> <span class="p">(</span><span class="n">CONFIG_TYPE</span><span class="p">):</span> <span class="n">BACKEND</span><span class="p">,</span> <span class="n">BACKEND_TEST</span><span class="p">,</span> <span class="n">DATASET</span><span class="p">,</span> <span class="n">POD_TEMPLATE</span><span class="p">,</span> <span class="n">POOL</span><span class="p">,</span> <span class="n">RESOURCE_VALIDATION</span><span class="p">,</span> <span class="n">ROLE</span><span class="p">,</span> <span class="n">SERVICE</span><span class="p">,</span> <span class="n">WORKFLOW</span>
-
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">update</span> <span class="n">SERVICE</span>
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">update</span> <span class="n">POOL</span> <span class="n">my</span><span class="o">-</span><span class="n">pool</span> <span class="o">--</span><span class="n">description</span> <span class="s2">&quot;Updated pool settings&quot;</span> <span class="o">--</span><span class="n">tags</span> <span class="n">production</span> <span class="n">high</span><span class="o">-</span><span class="n">priority</span>
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">update</span> <span class="n">BACKEND</span> <span class="n">my</span><span class="o">-</span><span class="n">backend</span> <span class="o">--</span><span class="n">file</span> <span class="n">config</span><span class="o">.</span><span class="n">json</span>
+<p><p>Update a configuration</p>
+</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">update</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">config_type</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">file</span> <span class="n">FILE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">description</span> <span class="n">DESCRIPTION</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tags</span> <span class="n">TAGS</span> <span class="p">[</span><span class="n">TAGS</span> <span class="o">...</span><span class="p">]]</span>
 </pre></div>
 </div>
-<section id="positional-arguments">
-<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Link to this heading">#</a></h2>
-<dl class="simple">
-<dt><kbd class="kbd docutils literal notranslate">config_type</kbd></dt><dd><p>Config type to update (CONFIG_TYPE)</p>
+<section id="src.cli.main_parser-create_cli_parser-positional-arguments">
+<h2>Positional Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-positional-arguments" title="Link to this heading">#</a></h2>
+<dl class="option-list">
+<dt id="cli_reference_config_update_config_type"><kbd>config_type</kbd><a class="headerlink" href="#cli_reference_config_update_config_type" title="Link to this argument">#</a></dt>
+<dd><p>Possible choices: BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW</p>
+<p>Config type to update (CONFIG_TYPE)</p>
 </dd>
-<dt><kbd class="kbd docutils literal notranslate">name</kbd></dt><dd><p>Optional name of the config to update</p>
+<dt id="cli_reference_config_update_name"><kbd>name</kbd><a class="headerlink" href="#cli_reference_config_update_name" title="Link to this argument">#</a></dt>
+<dd><p>Optional name of the config to update</p>
 </dd>
 </dl>
 </section>
-<section id="named-arguments">
-<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Link to this heading">#</a></h2>
+<section id="src.cli.main_parser-create_cli_parser-named-arguments">
+<h2>Named Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-named-arguments" title="Link to this heading">#</a></h2>
 <dl class="option-list">
-<dt><kbd><span class="option">--file</span>, <span class="option">-f</span></kbd></dt>
+<dt id="cli_reference_config_update_file"><kbd>--file, -f</kbd><a class="headerlink" href="#cli_reference_config_update_file" title="Link to this argument">#</a></dt>
 <dd><p>Path to a JSON file containing the updated config</p>
 </dd>
-<dt><kbd><span class="option">--description</span>, <span class="option">-d</span></kbd></dt>
+<dt id="cli_reference_config_update_description"><kbd>--description, -d</kbd><a class="headerlink" href="#cli_reference_config_update_description" title="Link to this argument">#</a></dt>
 <dd><p>Description of the config update</p>
 </dd>
-<dt><kbd><span class="option">--tags</span>, <span class="option">-t</span></kbd></dt>
+<dt id="cli_reference_config_update_tags"><kbd>--tags, -t</kbd><a class="headerlink" href="#cli_reference_config_update_tags" title="Link to this argument">#</a></dt>
 <dd><p>Tags for the config update</p>
 </dd>
 </dl>
 </section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<p><p>Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW</p>
+</p>
+<section id="cli_reference_config_update_examples">
+<h2>Examples<a class="headerlink" href="#cli_reference_config_update_examples" title="Link to this heading">#</a></h2>
 <p>Update a service configuration:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>show<span class="w"> </span>SERVICE<span class="w"> </span>cli_config<span class="w"> </span>latest_version
-Key<span class="w">              </span><span class="nv">Value</span>
-<span class="o">=========================</span>
-latest_version<span class="w">   </span><span class="m">6</span>.0.0
-
-$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>update<span class="w"> </span>SERVICE
-Successfully<span class="w"> </span>updated<span class="w"> </span>SERVICE<span class="w"> </span>config
-
-$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>show<span class="w"> </span>SERVICE<span class="w"> </span>cli_config<span class="w"> </span>latest_version
-Key<span class="w">              </span><span class="nv">Value</span>
-<span class="o">=========================</span>
-latest_version<span class="w">   </span><span class="m">6</span>.0.1
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">update</span> <span class="n">SERVICE</span>
 </pre></div>
 </div>
 <p>Update a backend configuration from a file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>update<span class="w"> </span>BACKEND<span class="w"> </span>my-backend<span class="w"> </span>--file<span class="w"> </span>config.json
-Successfully<span class="w"> </span>updated<span class="w"> </span>BACKEND<span class="w"> </span>config
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">update</span> <span class="n">BACKEND</span> <span class="n">my</span><span class="o">-</span><span class="n">backend</span> <span class="o">--</span><span class="n">file</span> <span class="n">config</span><span class="o">.</span><span class="n">json</span>
 </pre></div>
 </div>
 <p>Update with description and tags:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>update<span class="w"> </span>POOL<span class="w"> </span>my-pool<span class="w"> </span>--description<span class="w"> </span><span class="s2">&quot;Updated pool settings&quot;</span><span class="w"> </span>--tags<span class="w"> </span>production<span class="w"> </span>high-priority
-Successfully<span class="w"> </span>updated<span class="w"> </span>POOL<span class="w"> </span>config
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">update</span> <span class="n">POOL</span> <span class="n">my</span><span class="o">-</span><span class="n">pool</span> <span class="o">--</span><span class="n">description</span> <span class="s2">&quot;Updated pool settings&quot;</span> <span class="o">--</span><span class="n">tags</span> <span class="n">production</span> <span class="n">high</span><span class="o">-</span><span class="n">priority</span>
 </pre></div>
 </div>
 </section>
@@ -605,9 +592,9 @@ Successfully<span class="w"> </span>updated<span class="w"> </span>POOL<span cla
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-arguments">Positional Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#named-arguments">Named Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#src.cli.main_parser-create_cli_parser-positional-arguments">Positional Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#src.cli.main_parser-create_cli_parser-named-arguments">Named Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cli_reference_config_update_examples">Examples</a></li>
 </ul>
   </nav></div>
 

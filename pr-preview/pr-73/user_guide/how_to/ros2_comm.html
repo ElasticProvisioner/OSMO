@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/collapsible_code_block.css?v=fddc5587" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/base.css?v=f1a55564" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/base.css?v=f411dd76" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/lifecycle-timeline.css?v=b1697d17" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/mermaid_custom.css?v=e845640e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/versioning.css?v=ed00f604" />
@@ -572,7 +572,7 @@ which is essential for building scalable robotics applications.</p>
 <span class="w">           </span><span class="no">apt-get install -y dnsutils</span>
 
 <span class="w">           </span><span class="no"># (1)</span>
-<span class="w">           </span><span class="no">DISCOVERY_SERVER_IP=$(nslookup {{host:discovery-server}} | grep -oP \</span>
+<span class="w">           </span><span class="no">DISCOVERY_SERVER_IP=$(nslookup -type=A {{host:discovery-server}} | grep -oP \</span>
 <span class="w">               </span><span class="no">&#39;Address: \K\d[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}&#39;)</span>
 
 <span class="w">           </span><span class="no">export ROS_DISCOVERY_SERVER=$DISCOVERY_SERVER_IP:11811</span>
@@ -595,7 +595,7 @@ which is essential for building scalable robotics applications.</p>
 <span class="w">           </span><span class="no">apt-get update</span>
 <span class="w">           </span><span class="no">apt-get install -y dnsutils</span>
 
-<span class="w">           </span><span class="no">DISCOVERY_SERVER_IP=$(nslookup {{host:discovery-server}} | grep -oP \</span>
+<span class="w">           </span><span class="no">DISCOVERY_SERVER_IP=$(nslookup -type=A {{host:discovery-server}} | grep -oP \</span>
 <span class="w">               </span><span class="no">&#39;Address: \K\d[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}&#39;)</span>
 
 <span class="w">           </span><span class="no">export ROS_DISCOVERY_SERVER=$DISCOVERY_SERVER_IP:11811</span>
@@ -613,7 +613,7 @@ which is essential for building scalable robotics applications.</p>
 <span class="w">       </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1Gi</span>
 <span class="w">       </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1Gi</span>
 <span class="w">   </span><span class="nt">timeout</span><span class="p">:</span>
-<span class="w">     </span><span class="nt">exec_timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15m</span>
+<span class="w">     </span><span class="nt">exec_timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1h</span>
 </pre></div>
 <ol class="arabic simple">
 <li><p>The discovery server IP is resolved using DNS lookup. The IP is required
@@ -647,8 +647,18 @@ from the publisher node through the discovery server, even if the two ROS nodes 
 machines in different networks.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This workflow has a timeout of <strong>15 minutes</strong>. If the workflow runs for longer than that,
-it will be terminated by the service automatically.</p>
+<p>This workflow has a timeout of <strong>1 hour</strong>. If the workflow runs for longer than that,
+it will be terminated by the service automatically.
+If you need to run the workflow for longer than 1 hour, you can increase the timeout by modifying the timeout field:</p>
+<div class="highlight-yaml notranslate"><div class="annotate highlight"><pre><span></span><span class="nt">workflow</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">timeout</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">exec_timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2h</span><span class="w"> </span><span class="c1">#(1)</span>
+</pre></div>
+<ol class="arabic simple">
+<li><p>Modify this field to the desired timeout.
+Units can be <cite>s</cite> for seconds, <cite>m</cite> for minutes, <cite>h</cite> for hours, or <cite>d</cite> for days.</p></li>
+</ol>
+</div>
 </div>
 </section>
 </section>

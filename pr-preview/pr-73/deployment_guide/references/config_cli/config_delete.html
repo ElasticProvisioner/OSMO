@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/collapsible_code_block.css?v=fddc5587" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f1a55564" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=f411dd76" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/lifecycle-timeline.css?v=b1697d17" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/mermaid_custom.css?v=e845640e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/versioning.css?v=ed00f604" />
@@ -493,51 +493,47 @@
                   
   <section id="osmo-config-delete">
 <span id="cli-reference-config-delete"></span><h1>osmo config delete<a class="headerlink" href="#osmo-config-delete" title="Link to this heading">#</a></h1>
-<p>Delete a named configuration or a specific config revision</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">delete</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">config_type</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">description</span> <span class="n">DESCRIPTION</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tags</span> <span class="n">TAGS</span> <span class="p">[</span><span class="n">TAGS</span> <span class="o">...</span><span class="p">]]</span>
-
-<span class="n">Available</span> <span class="n">config</span> <span class="n">types</span> <span class="p">(</span><span class="n">CONFIG_TYPE</span><span class="p">):</span> <span class="n">BACKEND</span><span class="p">,</span> <span class="n">BACKEND_TEST</span><span class="p">,</span> <span class="n">DATASET</span><span class="p">,</span> <span class="n">POD_TEMPLATE</span><span class="p">,</span> <span class="n">POOL</span><span class="p">,</span> <span class="n">RESOURCE_VALIDATION</span><span class="p">,</span> <span class="n">ROLE</span>
-
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">delete</span> <span class="n">POOL</span> <span class="n">my</span><span class="o">-</span><span class="n">pool</span>
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">delete</span> <span class="n">SERVICE</span><span class="p">:</span><span class="mi">123</span>
-<span class="n">Ex</span><span class="o">.</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">delete</span> <span class="n">BACKEND</span> <span class="n">my</span><span class="o">-</span><span class="n">backend</span> <span class="o">--</span><span class="n">description</span> <span class="s2">&quot;Removing unused backend&quot;</span> <span class="o">--</span><span class="n">tags</span> <span class="n">cleanup</span> <span class="n">deprecated</span>
+<p><p>Delete a named configuration or a specific config revision</p>
+</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">delete</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">config_type</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">description</span> <span class="n">DESCRIPTION</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tags</span> <span class="n">TAGS</span> <span class="p">[</span><span class="n">TAGS</span> <span class="o">...</span><span class="p">]]</span>
 </pre></div>
 </div>
-<section id="positional-arguments">
-<h2>Positional Arguments<a class="headerlink" href="#positional-arguments" title="Link to this heading">#</a></h2>
-<dl class="simple">
-<dt><kbd class="kbd docutils literal notranslate">config_type</kbd></dt><dd><p>Type of config to delete (CONFIG_TYPE) or CONFIG_TYPE:revision_number to delete a specific revision</p>
+<section id="src.cli.main_parser-create_cli_parser-positional-arguments">
+<h2>Positional Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-positional-arguments" title="Link to this heading">#</a></h2>
+<dl class="option-list">
+<dt id="cli_reference_config_delete_config_type"><kbd>config_type</kbd><a class="headerlink" href="#cli_reference_config_delete_config_type" title="Link to this argument">#</a></dt>
+<dd><p>Type of config to delete (CONFIG_TYPE) or CONFIG_TYPE:revision_number to delete a specific revision</p>
 </dd>
-<dt><kbd class="kbd docutils literal notranslate">name</kbd></dt><dd><p>Name of the config to delete (required when not deleting a revision)</p>
+<dt id="cli_reference_config_delete_name"><kbd>name</kbd><a class="headerlink" href="#cli_reference_config_delete_name" title="Link to this argument">#</a></dt>
+<dd><p>Name of the config to delete (required when not deleting a revision)</p>
 </dd>
 </dl>
 </section>
-<section id="named-arguments">
-<h2>Named Arguments<a class="headerlink" href="#named-arguments" title="Link to this heading">#</a></h2>
+<section id="src.cli.main_parser-create_cli_parser-named-arguments">
+<h2>Named Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-named-arguments" title="Link to this heading">#</a></h2>
 <dl class="option-list">
-<dt><kbd><span class="option">--description</span>, <span class="option">-d</span></kbd></dt>
+<dt id="cli_reference_config_delete_description"><kbd>--description, -d</kbd><a class="headerlink" href="#cli_reference_config_delete_description" title="Link to this argument">#</a></dt>
 <dd><p>Description of the deletion (only used when deleting a named config)</p>
 </dd>
-<dt><kbd><span class="option">--tags</span>, <span class="option">-t</span></kbd></dt>
+<dt id="cli_reference_config_delete_tags"><kbd>--tags, -t</kbd><a class="headerlink" href="#cli_reference_config_delete_tags" title="Link to this argument">#</a></dt>
 <dd><p>Tags for the deletion (only used when deleting a named config)</p>
 </dd>
 </dl>
 </section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<p><p>Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE</p>
+</p>
+<section id="cli_reference_config_delete_examples">
+<h2>Examples<a class="headerlink" href="#cli_reference_config_delete_examples" title="Link to this heading">#</a></h2>
 <p>Delete a named pool configuration:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>delete<span class="w"> </span>POOL<span class="w"> </span>my-pool
-Successfully<span class="w"> </span>deleted<span class="w"> </span>POOL<span class="w"> </span>config<span class="w"> </span><span class="s2">&quot;my-pool&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">delete</span> <span class="n">POOL</span> <span class="n">my</span><span class="o">-</span><span class="n">pool</span>
 </pre></div>
 </div>
 <p>Delete a specific revision:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>delete<span class="w"> </span>SERVICE:123
-Successfully<span class="w"> </span>deleted<span class="w"> </span>revision<span class="w"> </span><span class="m">123</span><span class="w"> </span>of<span class="w"> </span>SERVICE<span class="w"> </span>config
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">delete</span> <span class="n">SERVICE</span><span class="p">:</span><span class="mi">123</span>
 </pre></div>
 </div>
 <p>Delete with description and tags:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>delete<span class="w"> </span>BACKEND<span class="w"> </span>my-backend<span class="w"> </span>--description<span class="w"> </span><span class="s2">&quot;Removing unused backend&quot;</span><span class="w"> </span>--tags<span class="w"> </span>cleanup<span class="w"> </span>deprecated
-Successfully<span class="w"> </span>deleted<span class="w"> </span>BACKEND<span class="w"> </span>config<span class="w"> </span><span class="s2">&quot;my-backend&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osmo</span> <span class="n">config</span> <span class="n">delete</span> <span class="n">BACKEND</span> <span class="n">my</span><span class="o">-</span><span class="n">backend</span> <span class="o">--</span><span class="n">description</span> <span class="s2">&quot;Removing unused backend&quot;</span> <span class="o">--</span><span class="n">tags</span> <span class="n">cleanup</span> <span class="n">deprecated</span>
 </pre></div>
 </div>
 </section>
@@ -592,9 +588,9 @@ Successfully<span class="w"> </span>deleted<span class="w"> </span>BACKEND<span 
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-arguments">Positional Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#named-arguments">Named Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#src.cli.main_parser-create_cli_parser-positional-arguments">Positional Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#src.cli.main_parser-create_cli_parser-named-arguments">Named Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cli_reference_config_delete_examples">Examples</a></li>
 </ul>
   </nav></div>
 

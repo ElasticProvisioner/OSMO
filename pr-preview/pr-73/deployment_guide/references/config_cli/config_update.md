@@ -21,64 +21,50 @@ SPDX-License-Identifier: Apache-2.0 -->
 Update a configuration
 
 ```default
-osmo config update [-h] config_type [name] [--file FILE] [--description DESCRIPTION] [--tags TAGS [TAGS ...]]
-
-Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
-
-Ex. osmo config update SERVICE
-Ex. osmo config update POOL my-pool --description "Updated pool settings" --tags production high-priority
-Ex. osmo config update BACKEND my-backend --file config.json
+usage: osmo config update [-h] config_type [name] [--file FILE] [--description DESCRIPTION] [--tags TAGS [TAGS ...]]
 ```
 
 ## Positional Arguments
 
-`config_type`
-: Config type to update (CONFIG_TYPE)
+* **config_type**: 
 
-`name`
-: Optional name of the config to update
+Possible choices: BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
+
+Config type to update (CONFIG_TYPE)
+* **name**: 
+
+Optional name of the config to update
 
 ## Named Arguments
 
-* **--file-f**: 
+* **--file, -f**: 
 
 Path to a JSON file containing the updated config
-* **--description-d**: 
+* **--description, -d**: 
 
 Description of the config update
-* **--tags-t**: 
+* **--tags, -t**: 
 
 Tags for the config update
+
+Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
 
 ## Examples
 
 Update a service configuration:
 
-```bash
-$ osmo config show SERVICE cli_config latest_version
-Key              Value
-=========================
-latest_version   6.0.0
-
-$ osmo config update SERVICE
-Successfully updated SERVICE config
-
-$ osmo config show SERVICE cli_config latest_version
-Key              Value
-=========================
-latest_version   6.0.1
+```default
+osmo config update SERVICE
 ```
 
 Update a backend configuration from a file:
 
-```bash
-$ osmo config update BACKEND my-backend --file config.json
-Successfully updated BACKEND config
+```default
+osmo config update BACKEND my-backend --file config.json
 ```
 
 Update with description and tags:
 
-```bash
-$ osmo config update POOL my-pool --description "Updated pool settings" --tags production high-priority
-Successfully updated POOL config
+```default
+osmo config update POOL my-pool --description "Updated pool settings" --tags production high-priority
 ```

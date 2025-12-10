@@ -18,65 +18,51 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # osmo config tag
 
-Update tags for a config revision
-
-The `osmo config tag` command allows you to update tags for configuration revisions. Tags can be
-used for organizing configs by category and filtering output of `osmo config history`. Tags do not
-affect the configuration itself.
+Update tags for a config revision. Tags can be used for organizing configs by category and filtering output of `osmo config history`. Tags do not affect the configuration itself.
 
 ```default
-osmo config tag [-h] config_type [--set SET [SET ...]] [--delete DELETE [DELETE ...]]
-
-Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
-
-Ex. osmo config tag BACKEND:5 --set foo --delete test-4 test-3
-Ex. osmo config tag BACKEND --set current-tag
+usage: osmo config tag [-h] config_type [--set SET [SET ...]] [--delete DELETE [DELETE ...]]
 ```
 
 ## Positional Arguments
 
-`config_type`
-: Config to update tags for in format <CONFIG_TYPE>[:<revision>]
+* **config_type**: 
+
+Config to update tags for in format <CONFIG_TYPE>[:<revision>]
 
 ## Named Arguments
 
-* **--set-s**: 
+* **--set, -s**: 
 
 Tags to add to the config history entry
-* **--delete-d**: 
+* **--delete, -d**: 
 
 Tags to remove from the config history entry
+
+Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
 
 ## Examples
 
 View current tags for a revision:
 
-```bash
-$ osmo config history BACKEND -r 5
-Config Type   Name      Revision   Username            Created At               Description                    Tags
-=============================================================================================================================
-BACKEND       default   5          user@example.com    May 08, 2025 10:15 EDT   Set backend 'default' config   test-3, test-4
+```default
+osmo config history BACKEND -r 5
 ```
 
 Update tags by adding and removing:
 
-```bash
-$ osmo config tag BACKEND:5 --set foo --delete test-4 test-3
-Successfully updated tags for BACKEND:5
+```default
+osmo config tag BACKEND:5 --set foo --delete test-4 test-3
 ```
 
 Verify the updated tags:
 
-```bash
-$ osmo config history BACKEND -r 5
-Config Type   Name      Revision   Username            Created At               Description                    Tags
-===================================================================================================================
-BACKEND       default   5          user@example.com    May 08, 2025 10:15 EDT   Set backend 'default' config   foo
+```default
+osmo config history BACKEND -r 5
 ```
 
 Update tags for current revision:
 
-```bash
-$ osmo config tag BACKEND --set current-tag
-Successfully updated tags for BACKEND
+```default
+osmo config tag BACKEND --set current-tag
 ```
