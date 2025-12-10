@@ -26,11 +26,9 @@ usage: osmo config tag [-h] config_type [--set SET [SET ...]] [--delete DELETE [
 
 ## Positional Arguments
 
-* **config**: 
+* **config_type**: 
 
-Possible choices: BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
-
-Config to update tags for in format <config_type>[:<revision>]
+Config to update tags for in format <CONFIG_TYPE>[:<revision>]
 
 ## Named Arguments
 
@@ -40,6 +38,8 @@ Tags to add to the config history entry
 * **--delete, -d**: 
 
 Tags to remove from the config history entry
+
+Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
 
 ## Examples
 

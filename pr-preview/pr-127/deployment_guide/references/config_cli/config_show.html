@@ -495,23 +495,22 @@
 <span id="cli-reference-config-show"></span><h1>osmo config show<a class="headerlink" href="#osmo-config-show" title="Link to this heading">#</a></h1>
 <p><p>Show a configuration or previous revision of a configuration</p>
 </p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">show</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span>
-                        <span class="p">{</span><span class="n">BACKEND</span><span class="p">,</span><span class="n">BACKEND_TEST</span><span class="p">,</span><span class="n">DATASET</span><span class="p">,</span><span class="n">POD_TEMPLATE</span><span class="p">,</span><span class="n">POOL</span><span class="p">,</span><span class="n">RESOURCE_VALIDATION</span><span class="p">,</span><span class="n">ROLE</span><span class="p">,</span><span class="n">SERVICE</span><span class="p">,</span><span class="n">WORKFLOW</span><span class="p">}</span>
-                        <span class="p">[</span><span class="n">names</span> <span class="o">...</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">osmo</span> <span class="n">config</span> <span class="n">show</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">config_type</span> <span class="p">[</span><span class="n">names</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
 <section id="src.cli.main_parser-create_cli_parser-positional-arguments">
 <h2>Positional Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-positional-arguments" title="Link to this heading">#</a></h2>
 <dl class="option-list">
-<dt id="cli_reference_config_show_config"><kbd>config</kbd><a class="headerlink" href="#cli_reference_config_show_config" title="Link to this argument">#</a></dt>
-<dd><p>Possible choices: BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW</p>
-<p>Config to show in format &lt;config_type&gt;[:&lt;revision&gt;]</p>
+<dt id="cli_reference_config_show_config_type"><kbd>config_type</kbd><a class="headerlink" href="#cli_reference_config_show_config_type" title="Link to this argument">#</a></dt>
+<dd><p>Config to show in format &lt;CONFIG_TYPE&gt;[:&lt;revision&gt;]</p>
 </dd>
 <dt id="cli_reference_config_show_names"><kbd>names</kbd><a class="headerlink" href="#cli_reference_config_show_names" title="Link to this argument">#</a></dt>
 <dd><p>Optional names/indices to index into the config. Can be used to show a named config.</p>
 </dd>
 </dl>
 </section>
+<p><p>Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW</p>
+</p>
 <section id="cli_reference_config_show_examples">
 <h2>Examples<a class="headerlink" href="#cli_reference_config_show_examples" title="Link to this heading">#</a></h2>
 <p>Show a service configuration in JSON format:</p>

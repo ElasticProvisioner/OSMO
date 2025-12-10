@@ -26,11 +26,9 @@ usage: osmo config delete [-h] config_type [name] [--description DESCRIPTION] [-
 
 ## Positional Arguments
 
-* **config**: 
+* **config_type**: 
 
-Possible choices: BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
-
-Config type to delete or config_type:revision_number to delete a specific revision
+Type of config to delete (CONFIG_TYPE) or CONFIG_TYPE:revision_number to delete a specific revision
 * **name**: 
 
 Name of the config to delete (required when not deleting a revision)
@@ -43,6 +41,8 @@ Description of the deletion (only used when deleting a named config)
 * **--tags, -t**: 
 
 Tags for the deletion (only used when deleting a named config)
+
+Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE
 
 ## Examples
 

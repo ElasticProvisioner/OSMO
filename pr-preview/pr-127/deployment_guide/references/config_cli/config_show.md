@@ -21,21 +21,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 Show a configuration or previous revision of a configuration
 
 ```default
-usage: osmo config show [-h]
-                        {BACKEND,BACKEND_TEST,DATASET,POD_TEMPLATE,POOL,RESOURCE_VALIDATION,ROLE,SERVICE,WORKFLOW}
-                        [names ...]
+usage: osmo config show [-h] config_type [names ...]
 ```
 
 ## Positional Arguments
 
-* **config**: 
+* **config_type**: 
 
-Possible choices: BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
-
-Config to show in format <config_type>[:<revision>]
+Config to show in format <CONFIG_TYPE>[:<revision>]
 * **names**: 
 
 Optional names/indices to index into the config. Can be used to show a named config.
+
+Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
 
 ## Examples
 

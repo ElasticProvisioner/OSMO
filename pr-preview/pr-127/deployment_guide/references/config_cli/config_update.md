@@ -26,11 +26,11 @@ usage: osmo config update [-h] config_type [name] [--file FILE] [--description D
 
 ## Positional Arguments
 
-* **config**: 
+* **config_type**: 
 
 Possible choices: BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
 
-Config type to update
+Config type to update (CONFIG_TYPE)
 * **name**: 
 
 Optional name of the config to update
@@ -46,6 +46,8 @@ Description of the config update
 * **--tags, -t**: 
 
 Tags for the config update
+
+Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
 
 ## Examples
 

@@ -501,9 +501,8 @@
 <section id="src.cli.main_parser-create_cli_parser-positional-arguments">
 <h2>Positional Arguments<a class="headerlink" href="#src.cli.main_parser-create_cli_parser-positional-arguments" title="Link to this heading">#</a></h2>
 <dl class="option-list">
-<dt id="cli_reference_config_delete_config"><kbd>config</kbd><a class="headerlink" href="#cli_reference_config_delete_config" title="Link to this argument">#</a></dt>
-<dd><p>Possible choices: BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW</p>
-<p>Config type to delete or config_type:revision_number to delete a specific revision</p>
+<dt id="cli_reference_config_delete_config_type"><kbd>config_type</kbd><a class="headerlink" href="#cli_reference_config_delete_config_type" title="Link to this argument">#</a></dt>
+<dd><p>Type of config to delete (CONFIG_TYPE) or CONFIG_TYPE:revision_number to delete a specific revision</p>
 </dd>
 <dt id="cli_reference_config_delete_name"><kbd>name</kbd><a class="headerlink" href="#cli_reference_config_delete_name" title="Link to this argument">#</a></dt>
 <dd><p>Name of the config to delete (required when not deleting a revision)</p>
@@ -521,6 +520,8 @@
 </dd>
 </dl>
 </section>
+<p><p>Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE</p>
+</p>
 <section id="cli_reference_config_delete_examples">
 <h2>Examples<a class="headerlink" href="#cli_reference_config_delete_examples" title="Link to this heading">#</a></h2>
 <p>Delete a named pool configuration:</p>

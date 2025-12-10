@@ -26,11 +26,11 @@ usage: osmo config set [-h] config_type name type [--field FIELD] [--description
 
 ## Positional Arguments
 
-* **config**: 
+* **config_type**: 
 
 Possible choices: ROLE
 
-Config type to set (config_type)
+Config type to set (CONFIG_TYPE)
 * **name**: 
 
 Name of the role
@@ -49,6 +49,8 @@ Optional description for the set action
 * **--tags**: 
 
 Optional tags for the set action
+
+Available config types (CONFIG_TYPE): ROLE
 
 ## Examples
 

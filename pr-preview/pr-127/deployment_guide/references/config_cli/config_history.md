@@ -26,11 +26,11 @@ usage: osmo config history [-h] [config_type] [--offset OFFSET] [--count COUNT] 
 
 ## Positional Arguments
 
-* **config**: 
+* **config_type**: 
 
 Possible choices: BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
 
-Config type to show history
+Config type to show history for (CONFIG_TYPE)
 
 ## Named Arguments
 
@@ -81,6 +81,8 @@ Default: `'text'`
 Fit the table width to the terminal width
 
 Default: `False`
+
+Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
 
 ## Examples
 

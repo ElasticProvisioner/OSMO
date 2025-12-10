@@ -30,8 +30,7 @@ usage: osmo config rollback [-h] revision [--description DESCRIPTION] [--tags TA
 
 * **revision**: 
 
-Revision to roll back to in format <config_type>:<revision> (e.g. [SERVICE:12](SERVICE:12)).
-Available config types (config_type): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
+Revision to roll back to in format <CONFIG_TYPE>:<revision>, e.g. [SERVICE:12](SERVICE:12)
 
 ## Named Arguments
 
@@ -41,6 +40,8 @@ Optional description for the rollback action
 * **--tags**: 
 
 Optional tags for the rollback action
+
+Available config types (CONFIG_TYPE): BACKEND, BACKEND_TEST, DATASET, POD_TEMPLATE, POOL, RESOURCE_VALIDATION, ROLE, SERVICE, WORKFLOW
 
 ## Examples
 
