@@ -71,7 +71,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Dec 09, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 10, 2025"/>
 
 
   </head>
@@ -649,11 +649,21 @@ for more on the specific GPUs that are supported.</p>
 <p class="admonition-title">Note</p>
 <p>The complete workflow example is available <a class="reference external" href="https://github.com/NVIDIA/OSMO/tree/main/workflows/groot/groot_notebook" rel="noreferrer" target="_blank">here <svg version="1.1" width="1.0em" height="1.0em" viewBox="0 0 16 16" aria-hidden="true" style="display: inline-block; vertical-align: middle; fill: currentColor;"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg></a>.</p>
 </div>
-<p>Add any platform value if necessary.</p>
+<p>Add any platform value if necessary to target a specific type of hardware.
+To read more about platforms, please refer to the <a class="reference internal" href="../resource_pools/index.html#concepts-platforms"><span class="std std-ref">Platforms</span></a>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The workflow has a timeout of <strong>2 hours</strong>. If the workflow runs for longer than that, it will be terminated.
-If you need to run the workflow for longer than 2 hours, you can increase the timeout by modifying the workflow spec.</p>
+If you need to run the workflow for longer than 2 hours, you can increase the timeout by modifying the timeout field:</p>
+<div class="highlight-yaml notranslate"><div class="annotate highlight"><pre><span></span><span class="nt">workflow</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">timeout</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">exec_timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2h</span><span class="w"> </span><span class="c1">#(1)</span>
+</pre></div>
+<ol class="arabic simple">
+<li><p>Modify this field to the desired timeout.
+Units can be <cite>s</cite> for seconds, <cite>m</cite> for minutes, <cite>h</cite> for hours, or <cite>d</cite> for days.</p></li>
+</ol>
+</div>
 </div>
 <p>After the workflow starts running, check the logs to see if the workflow logs this messages:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Jupyter<span class="w"> </span>Server<span class="w"> </span><span class="m">2</span>.17.0<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at:
@@ -664,7 +674,7 @@ Use<span class="w"> </span>Control-C<span class="w"> </span>to<span class="w"> <
 </div>
 <p>Before the workflow logs this message, the workflow is installing all the necessary dependencies
 before spinning up the JupyterLab interface. You will have to wait for the installation to complete
-before you can move on to the next step.</p>
+before you can move on to the next step. This will take around <strong>15</strong> minutes.</p>
 <p>Then, you can access the JupyterLab interface by running the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>workflow<span class="w"> </span>port-forward<span class="w"> </span>&lt;workflow<span class="w"> </span>ID&gt;<span class="w"> </span>tutorial<span class="w"> </span>--port<span class="w"> </span><span class="m">6060</span>
 </pre></div>
@@ -856,7 +866,7 @@ especially in the <cite>New Embodiment Fine-tuning</cite> notebook.</p>
 </div>
       
         <div class="footer-item"><p class="last-updated">
-  Last updated on Dec 09, 2025.
+  Last updated on Dec 10, 2025.
   <br/>
 </p></div>
       

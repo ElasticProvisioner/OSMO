@@ -71,7 +71,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Dec 09, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 10, 2025"/>
 
 
   </head>
@@ -808,7 +808,7 @@ substituted with relevant values by the service.</p>
 <span class="w">      </span><span class="nt">files</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">          </span><span class="no">retries=45</span>
-<span class="w">          </span><span class="no">while ! nslookup {{host:server}} &gt; /dev/null ; do</span>
+<span class="w">          </span><span class="no">while ! nslookup -type=A {{host:server}} &gt; /dev/null ; do</span>
 <span class="w">            </span><span class="no">echo &quot;Waiting for server pod, $retries retries left...&quot;</span>
 <span class="w">            </span><span class="no">if [ $retries -eq 0 ] ; then</span>
 <span class="w">              </span><span class="no">echo &quot;Server pod not started in time!&quot;</span>
@@ -986,7 +986,7 @@ substituted with relevant values by the service.</p>
 </div>
       
         <div class="footer-item"><p class="last-updated">
-  Last updated on Dec 09, 2025.
+  Last updated on Dec 10, 2025.
   <br/>
 </p></div>
       

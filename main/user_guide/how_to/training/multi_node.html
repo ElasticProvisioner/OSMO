@@ -71,7 +71,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Dec 09, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 10, 2025"/>
 
 
   </head>
@@ -706,7 +706,7 @@ OSMO token <code class="docutils literal notranslate"><span class="pre">{{host:&
 </div>
 <p>In some cases, you may want to get the IP address of the task instead of the hostname.
 Use <code class="docutils literal notranslate"><span class="pre">nslookup</span></code> as an example to resolve the hostname to an IP address:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">TASK_IP</span><span class="o">=</span><span class="k">$(</span>nslookup<span class="w"> </span><span class="o">{{</span>host:master<span class="o">}}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-oP<span class="w"> </span><span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">TASK_IP</span><span class="o">=</span><span class="k">$(</span>nslookup<span class="w"> </span>-type<span class="o">=</span>A<span class="w"> </span><span class="o">{{</span>host:master<span class="o">}}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-oP<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;Address: \K\d[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n1<span class="k">)</span>
 </pre></div>
 </div>
@@ -955,7 +955,7 @@ You can use the a barrier script like <a class="reference external" href="https:
 </div>
       
         <div class="footer-item"><p class="last-updated">
-  Last updated on Dec 09, 2025.
+  Last updated on Dec 10, 2025.
   <br/>
 </p></div>
       
