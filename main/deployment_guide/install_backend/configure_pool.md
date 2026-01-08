@@ -29,9 +29,11 @@ OSMO automatically creates a default pool during initial service deployment. Lin
 ```bash
 $ cat << EOF > /tmp/pool_config.json
 {
-  "default": {
-    "backend": "<backend-name>",
-    "description": "<pool-description>"
+  "pools": {
+    "default": {
+      "backend": "<backend-name>",
+      "description": "<pool-description>"
+    }
   }
 }
 EOF
