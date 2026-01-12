@@ -72,7 +72,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Dec 20, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 12, 2026"/>
 
 
   </head>
@@ -498,9 +498,11 @@
 <p>OSMO automatically creates a default pool during initial service deployment. Link this pool to your registered backend by updating the pool configuration using the OSMO CLI:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; /tmp/pool_config.json</span>
 <span class="s">{</span>
-<span class="s">  &quot;default&quot;: {</span>
-<span class="s">    &quot;backend&quot;: &quot;&lt;backend-name&gt;&quot;,</span>
-<span class="s">    &quot;description&quot;: &quot;&lt;pool-description&gt;&quot;</span>
+<span class="s">  &quot;pools&quot;: {</span>
+<span class="s">    &quot;default&quot;: {</span>
+<span class="s">      &quot;backend&quot;: &quot;&lt;backend-name&gt;&quot;,</span>
+<span class="s">      &quot;description&quot;: &quot;&lt;pool-description&gt;&quot;</span>
+<span class="s">    }</span>
 <span class="s">  }</span>
 <span class="s">}</span>
 <span class="s">EOF</span>
@@ -675,7 +677,7 @@ default<span class="w">   </span>Default<span class="w"> </span>pool<span class=
 </div>
       
         <div class="footer-item"><p class="last-updated">
-  Last updated on Dec 20, 2025.
+  Last updated on Jan 12, 2026.
   <br/>
 </p></div>
       

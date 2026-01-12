@@ -72,7 +72,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Dec 20, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 12, 2026"/>
 
 
   </head>
@@ -653,51 +653,55 @@ $<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </sp
 <p>Configure the pool that references both pod templates via <code class="docutils literal notranslate"><span class="pre">platforms</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; platform_config.json</span>
 <span class="s">{</span>
-<span class="s">  &quot;name&quot;: &quot;heterogeneous_pool&quot;,</span>
-<span class="s">  &quot;backend&quot;: &quot;default&quot;,</span>
-<span class="s">  &quot;default_platform&quot;: &quot;l40s_platform&quot;,</span>
-<span class="s">  &quot;description&quot;: &quot;Simulation and training pool&quot;,</span>
-<span class="s">  &quot;common_default_variables&quot;: {</span>
-<span class="s">      &quot;USER_CPU&quot;: 1,</span>
-<span class="s">      &quot;USER_GPU&quot;: 0,</span>
-<span class="s">      &quot;USER_MEMORY&quot;: &quot;1Gi&quot;,</span>
-<span class="s">      &quot;USER_STORAGE&quot;: &quot;1Gi&quot;</span>
-<span class="s">  },</span>
-<span class="s">  &quot;common_resource_validations&quot;: [</span>
-<span class="s">      &quot;default_cpu&quot;,</span>
-<span class="s">      &quot;default_memory&quot;,</span>
-<span class="s">      &quot;default_storage&quot;</span>
-<span class="s">  ],</span>
-<span class="s">  &quot;common_pod_template&quot;: [</span>
-<span class="s">      &quot;default_user&quot;,</span>
-<span class="s">      &quot;default_ctrl&quot;</span>
-<span class="s">  ],</span>
-<span class="s">  &quot;platforms&quot;: {</span>
-<span class="s">      &quot;l40s_platform&quot;: {</span>
-<span class="s">          &quot;description&quot;: &quot;L40S platform&quot;,</span>
-<span class="s">          &quot;host_network_allowed&quot;: false,</span>
-<span class="s">          &quot;privileged_allowed&quot;: false,</span>
-<span class="s">          &quot;default_variables&quot;: {},</span>
-<span class="s">          &quot;resource_validations&quot;: [],</span>
-<span class="s">          &quot;override_pod_template&quot;: [&quot;l40s&quot;],</span>
-<span class="s">          &quot;allowed_mounts&quot;: []</span>
+<span class="s">  &quot;pools&quot;: {</span>
+<span class="s">    &quot;heterogeneous_pool&quot;: {</span>
+<span class="s">      &quot;name&quot;: &quot;heterogeneous_pool&quot;,</span>
+<span class="s">      &quot;backend&quot;: &quot;default&quot;,</span>
+<span class="s">      &quot;default_platform&quot;: &quot;l40s_platform&quot;,</span>
+<span class="s">      &quot;description&quot;: &quot;Simulation and training pool&quot;,</span>
+<span class="s">      &quot;common_default_variables&quot;: {</span>
+<span class="s">          &quot;USER_CPU&quot;: 1,</span>
+<span class="s">          &quot;USER_GPU&quot;: 0,</span>
+<span class="s">          &quot;USER_MEMORY&quot;: &quot;1Gi&quot;,</span>
+<span class="s">          &quot;USER_STORAGE&quot;: &quot;1Gi&quot;</span>
 <span class="s">      },</span>
-<span class="s">      &quot;a100_platform&quot;: {</span>
-<span class="s">          &quot;description&quot;: &quot;A100 platform&quot;,</span>
-<span class="s">          &quot;host_network_allowed&quot;: false,</span>
-<span class="s">          &quot;privileged_allowed&quot;: false,</span>
-<span class="s">          &quot;default_variables&quot;: {},</span>
-<span class="s">          &quot;resource_validations&quot;: [],</span>
-<span class="s">          &quot;override_pod_template&quot;: [&quot;a100&quot;],</span>
-<span class="s">          &quot;allowed_mounts&quot;: []</span>
+<span class="s">      &quot;common_resource_validations&quot;: [</span>
+<span class="s">          &quot;default_cpu&quot;,</span>
+<span class="s">          &quot;default_memory&quot;,</span>
+<span class="s">          &quot;default_storage&quot;</span>
+<span class="s">      ],</span>
+<span class="s">      &quot;common_pod_template&quot;: [</span>
+<span class="s">          &quot;default_user&quot;,</span>
+<span class="s">          &quot;default_ctrl&quot;</span>
+<span class="s">      ],</span>
+<span class="s">      &quot;platforms&quot;: {</span>
+<span class="s">          &quot;l40s_platform&quot;: {</span>
+<span class="s">              &quot;description&quot;: &quot;L40S platform&quot;,</span>
+<span class="s">              &quot;host_network_allowed&quot;: false,</span>
+<span class="s">              &quot;privileged_allowed&quot;: false,</span>
+<span class="s">              &quot;default_variables&quot;: {},</span>
+<span class="s">              &quot;resource_validations&quot;: [],</span>
+<span class="s">              &quot;override_pod_template&quot;: [&quot;l40s&quot;],</span>
+<span class="s">              &quot;allowed_mounts&quot;: []</span>
+<span class="s">          },</span>
+<span class="s">          &quot;a100_platform&quot;: {</span>
+<span class="s">              &quot;description&quot;: &quot;A100 platform&quot;,</span>
+<span class="s">              &quot;host_network_allowed&quot;: false,</span>
+<span class="s">              &quot;privileged_allowed&quot;: false,</span>
+<span class="s">              &quot;default_variables&quot;: {},</span>
+<span class="s">              &quot;resource_validations&quot;: [],</span>
+<span class="s">              &quot;override_pod_template&quot;: [&quot;a100&quot;],</span>
+<span class="s">              &quot;allowed_mounts&quot;: []</span>
+<span class="s">          }</span>
 <span class="s">      }</span>
+<span class="s">    }</span>
 <span class="s">  }</span>
 <span class="s">}</span>
 <span class="s">EOF</span>
 </pre></div>
 </div>
 <p>Apply the pool configuration:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>update<span class="w"> </span>POOL<span class="w"> </span>heterogeneous_pool<span class="w"> </span>--file<span class="w"> </span>platform_config.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osmo<span class="w"> </span>config<span class="w"> </span>update<span class="w"> </span>POOL<span class="w"> </span>--file<span class="w"> </span>platform_config.json
 </pre></div>
 </div>
 <p>Validate the pool configuration:</p>
@@ -1050,7 +1054,7 @@ in this group will now have access to the pool.</p></li>
 </div>
       
         <div class="footer-item"><p class="last-updated">
-  Last updated on Dec 20, 2025.
+  Last updated on Jan 12, 2026.
   <br/>
 </p></div>
       
