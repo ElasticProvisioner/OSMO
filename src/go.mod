@@ -21,8 +21,14 @@ require (
 	github.com/envoyproxy/protoc-gen-validate v1.1.0 // indirect
 	// Runtime indirect dependencies
 	github.com/google/renameio/v2 v2.0.0 // indirect
+	github.com/jackc/pgpassfile v1.0.0 // indirect
+	github.com/jackc/pgservicefile v0.0.0-20240606120523-5a60cdf6a761 // indirect
+	github.com/jackc/puddle/v2 v2.2.2 // indirect
+	github.com/kr/text v0.2.0 // indirect
 	github.com/landlock-lsm/go-landlock v0.0.0-20250303204525-1544bccde3a3 // indirect
 	github.com/mmcloughlin/md4 v0.1.2 // indirect
+	github.com/rogpeppe/go-internal v1.14.1 // indirect
+	golang.org/x/crypto v0.37.0 // indirect
 	golang.org/x/net v0.28.0 // indirect
 	golang.org/x/sync v0.13.0 // indirect
 	golang.org/x/sys v0.32.0 // indirect
@@ -34,11 +40,5 @@ require (
 
 require (
 	github.com/cncf/xds/go v0.0.0-20240723142845-024c85f92f20 // indirect
-	github.com/jackc/pgpassfile v1.0.0 // indirect
-	github.com/jackc/pgservicefile v0.0.0-20240606120523-5a60cdf6a761 // indirect
-	github.com/jackc/puddle/v2 v2.2.2 // indirect
-	github.com/kr/text v0.2.0 // indirect
 	github.com/planetscale/vtprotobuf v0.6.1-0.20240319094008-0393e58bdf10 // indirect
-	github.com/rogpeppe/go-internal v1.14.1 // indirect
-	golang.org/x/crypto v0.37.0 // indirect
 )
