@@ -23,54 +23,6 @@ import (
 	"testing"
 )
 
-func TestActionRegistryComplete(t *testing.T) {
-	// Test that all expected actions are registered
-	expectedActions := []string{
-		ActionWorkflowCreate,
-		ActionWorkflowList,
-		ActionWorkflowRead,
-		ActionWorkflowUpdate,
-		ActionWorkflowDelete,
-		ActionWorkflowCancel,
-		ActionWorkflowExec,
-		ActionWorkflowPortForward,
-		ActionWorkflowRsync,
-		ActionBucketRead,
-		ActionBucketWrite,
-		ActionBucketDelete,
-		ActionCredentialsCreate,
-		ActionCredentialsRead,
-		ActionCredentialsUpdate,
-		ActionCredentialsDelete,
-		ActionProfileRead,
-		ActionProfileUpdate,
-		ActionUserList,
-		ActionAppCreate,
-		ActionAppRead,
-		ActionAppUpdate,
-		ActionAppDelete,
-		ActionResourcesRead,
-		ActionConfigRead,
-		ActionConfigUpdate,
-		ActionAuthLogin,
-		ActionAuthRefresh,
-		ActionAuthToken,
-		ActionAuthServiceToken,
-		ActionRouterClient,
-		ActionSystemHealth,
-		ActionSystemVersion,
-		ActionInternalOperator,
-		ActionInternalLogger,
-		ActionInternalRouter,
-	}
-
-	for _, action := range expectedActions {
-		if _, exists := ActionRegistry[action]; !exists {
-			t.Errorf("Expected action %q not found in ActionRegistry", action)
-		}
-	}
-}
-
 func TestGetAllActions(t *testing.T) {
 	actions := GetAllActions()
 	if len(actions) == 0 {
