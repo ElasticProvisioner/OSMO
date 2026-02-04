@@ -34,6 +34,11 @@ export type {
   GroupQueryResponse,
   TaskQueryResponse,
   WorkflowListEntry,
+  // Profile types
+  UserProfile,
+  Credential,
+  CredentialCreate,
+  ProfileUpdate,
 } from "./types";
 
 // Clean hooks
@@ -55,6 +60,13 @@ export {
   useExecIntoTask,
   usePortForwardTask,
   usePortForwardWebserver,
+  // Profile and credentials hooks
+  profileKeys,
+  useProfile,
+  useCredentials,
+  useUpdateProfile,
+  useUpsertCredential,
+  useDeleteCredential,
 } from "./hooks";
 
 // Pool filtering types (from shim - will be simplified when backend ready)
