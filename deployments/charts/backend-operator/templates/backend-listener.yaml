@@ -118,6 +118,12 @@ spec:
         - {{$arg}}
         {{- end }}
         env:
+        - name: OTLP_ENABLED
+          value: "{{ .Values.services.backendListener.metrics.enabled }}"
+        - name: OTLP_ENDPOINT
+          value: "{{ .Values.services.backendListener.metrics.otlpEndpoint }}"
+        - name: OTLP_EXPORT_INTERVAL_MS
+          value: "{{ .Values.services.backendListener.metrics.exportIntervalMs }}"
         {{- with .Values.services.backendListener.extraEnvs }}
         {{- toYaml . | nindent 8 }}
         {{- end }}

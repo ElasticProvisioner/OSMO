@@ -282,6 +282,21 @@ services:
     ##
     eventCacheTTLMin: 15
 
+    ## OpenTelemetry metrics configuration
+    ##
+    metrics:
+      ## Enable OpenTelemetry metrics collection
+      ##
+      enabled: true
+
+      ## OTLP gRPC collector endpoint
+      ##
+      otlpEndpoint: "otel-collector:4317"
+
+      ## Export interval in milliseconds
+      ##
+      exportIntervalMs: 6000
+
     ## Additional command line arguments to pass to the backend listener
     ##
     extraArgs: []
