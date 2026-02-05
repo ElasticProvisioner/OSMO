@@ -855,6 +855,9 @@ sidecars:
     ports:
     - containerPort: 4000
       name: metrics
+    - containerPort: 4317
+      name: otlp-grpc
+      protocol: TCP
 
     ## Resource limits and requests for OTEL container
     ##
